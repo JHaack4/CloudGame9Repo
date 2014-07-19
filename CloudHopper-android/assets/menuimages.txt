@@ -1,0 +1,207 @@
+menuimages.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+badge0
+  rotate: false
+  xy: 2, 2
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+yellow0
+  rotate: false
+  xy: 910, 713
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+badge4
+  rotate: false
+  xy: 170, 2
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+yellow4
+  rotate: false
+  xy: 958, 713
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+badge8
+  rotate: false
+  xy: 338, 2
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+pushedtutorial
+  rotate: false
+  xy: 2, 713
+  size: 175, 125
+  orig: 175, 125
+  offset: 0, 0
+  index: -1
+yellow8
+  rotate: false
+  xy: 994, 713
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+musicoff
+  rotate: false
+  xy: 804, 231
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+yellow3
+  rotate: false
+  xy: 946, 713
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+badge3
+  rotate: false
+  xy: 128, 2
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+badge7
+  rotate: false
+  xy: 296, 2
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+controltilt
+  rotate: false
+  xy: 434, 2
+  size: 175, 125
+  orig: 175, 125
+  offset: 0, 0
+  index: -1
+menubg
+  rotate: false
+  xy: 2, 231
+  size: 800, 480
+  orig: 800, 480
+  offset: 0, 0
+  index: -1
+blackoverlay
+  rotate: false
+  xy: 422, 2
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+sliderbar
+  rotate: false
+  xy: 681, 713
+  size: 50, 103
+  orig: 50, 103
+  offset: 0, 0
+  index: -1
+yellow2
+  rotate: false
+  xy: 934, 713
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+controltouch
+  rotate: false
+  xy: 611, 2
+  size: 175, 125
+  orig: 175, 125
+  offset: 0, 0
+  index: -1
+badge2
+  rotate: false
+  xy: 86, 2
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+yellow6
+  rotate: false
+  xy: 982, 713
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+badge6
+  rotate: false
+  xy: 254, 2
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+tutorial
+  rotate: false
+  xy: 733, 713
+  size: 175, 125
+  orig: 175, 125
+  offset: 0, 0
+  index: -1
+loading
+  rotate: false
+  xy: 2, 129
+  size: 500, 100
+  orig: 500, 100
+  offset: 0, 0
+  index: -1
+badge1
+  rotate: false
+  xy: 44, 2
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+yellow1
+  rotate: false
+  xy: 922, 713
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+badge5
+  rotate: false
+  xy: 212, 2
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+yellow5
+  rotate: false
+  xy: 970, 713
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+badge9
+  rotate: false
+  xy: 380, 2
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+slider
+  rotate: false
+  xy: 179, 713
+  size: 500, 150
+  orig: 500, 150
+  offset: 0, 0
+  index: -1
+musicon
+  rotate: false
+  xy: 856, 231
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
