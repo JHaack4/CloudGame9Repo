@@ -68,7 +68,7 @@ public class GameScreen implements Screen, InputProcessor {
         rain15 = textures.findRegion("rain15");
 		basic0 = textures.findRegion("basic0");
 		super0 = textures.findRegion("super");
-		redChaser = textures.findRegion("guyred");
+		redChaser = textures.findRegion("bug");
         lighthalf = textures.findRegion("lightninghalf");
         lightline = textures.findRegion("lightningline");
 		for (int k = 1; k < 16; k++)

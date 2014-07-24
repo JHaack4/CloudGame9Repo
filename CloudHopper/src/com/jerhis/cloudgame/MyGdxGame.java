@@ -5,11 +5,13 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class MyGdxGame extends Game {
 
     PlatformHandler platformHandeler;
     SpriteBatch batch;
+    ShapeRenderer shapeRenderer;
 	BitmapFont font;
 	Preferences prefs;
 	CloudGame g;
@@ -37,6 +39,7 @@ public class MyGdxGame extends Game {
 	public void create() {
 		
 		batch = new SpriteBatch();
+        shapeRenderer = new ShapeRenderer();
 		// Use LibGDX's default Arial font.
 		font = new BitmapFont(Gdx.files.internal("myfont.fnt"));
 		//font.setColor(new Color(0,1,0,1));
@@ -141,6 +144,15 @@ public class MyGdxGame extends Game {
     public int ad(int k) {
         return platformHandeler.ad(k);
     }
+
+    public int leaderboard(int k) {
+        return 0;
+    }
+
+    public int achievement(int k) {
+        return 0;
+    }
+
  
 	public void render() {
 		super.render(); // important!

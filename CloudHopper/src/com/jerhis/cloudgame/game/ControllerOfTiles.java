@@ -12,6 +12,7 @@ public class ControllerOfTiles {
 	
 	public ArrayList<Tile> tiles;
 	public int gameType;
+    public long seed;
     Random random;
 	ArrayList<GameObject> gameObjects;
     ArrayList<Background> backgrounds;
@@ -31,10 +32,9 @@ public class ControllerOfTiles {
 		tiles.clear();
         backgrounds.clear();
 		gameType = gT;
-        if (gT == -1)
-            random = new Random(15994);
-        else
-            random = new Random((int)(Math.random()*1000000000));
+        seed = System.currentTimeMillis() / 10000;
+        if (gT == -1) seed = 15994;
+        random = new Random(seed);
 		spawnStart();
         startSpawnBackground();
 	}
