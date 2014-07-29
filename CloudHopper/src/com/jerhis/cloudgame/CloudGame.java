@@ -51,6 +51,7 @@ public class CloudGame {
 		
 		int cloudsRemoved = controllerOfTiles.updateTiles(delta, height);
 		score += (cloudsRemoved)*(cloudsRemoved + 1) * 25; //combos are scored better
+        if (cloudsRemoved >= 7) game.achievement(-7);
 		controllerOfTiles.spawn(totalTime, height);
 		
 		controllerOfTiles.updateGameObjects(delta);

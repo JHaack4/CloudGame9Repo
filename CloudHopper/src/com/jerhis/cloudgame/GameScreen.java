@@ -110,7 +110,7 @@ public class GameScreen implements Screen, InputProcessor {
         soundDrop = Gdx.audio.newSound(Gdx.files.internal("drop.wav"));
         musicGame = music1;
 
-
+        game.ad(6);
 		
 		game.g.clear();
 		state = State.Ready;
@@ -150,8 +150,19 @@ public class GameScreen implements Screen, InputProcessor {
 			break;
 		case Running:
 			state = game.g.update(delta);
-            if (state != state.Running)
-                game.platformHandeler.wakeLock(0);
+            if (state == state.Running && game.g.score > 10000) {
+                game.ad(2);
+            }
+            if (state != state.Running) {
+                game.wakeLock(0);
+            }
+            if (state == state.Finished) {
+                game.highScore((int)game.g.score);
+                game.leaderboard((int)game.g.score);
+                game.achievement((int)game.g.score);
+                game.ad(6);
+                game.ad(3);
+            }
 			break;
 		default:
 			break;
@@ -292,7 +303,7 @@ public class GameScreen implements Screen, InputProcessor {
         if (game.sound) {
             musicGame.pause();
         }
-        game.platformHandeler.wakeLock(0);
+        game.wakeLock(0);
 	}
  
 	@Override
@@ -312,7 +323,7 @@ public class GameScreen implements Screen, InputProcessor {
         //musicGame.dispose();
         soundDrop.stop();
         soundDrop.dispose();
-        game.platformHandeler.wakeLock(0);
+        game.wakeLock(0);
 	}
 
 	@Override
@@ -330,12 +341,12 @@ public class GameScreen implements Screen, InputProcessor {
 			break;
 		case Ready:
 			state = State.Running;
-            if (game.tiltControls) game.platformHandeler.wakeLock(1);
+            if (game.tiltControls) game.wakeLock(1);
 			break;
 		case Running:
 			if (x > 800-50 && y > 480 - 50) {
 				state = State.Paused;
-                game.platformHandeler.wakeLock(0);
+                game.wakeLock(0);
             }
             else if (x > 800-100 && y > 480 - 50)
                 sound();
@@ -361,8 +372,9 @@ public class GameScreen implements Screen, InputProcessor {
                 case 1: leavingToMainMenu = true;
                     game.g.clear(); break;
                 case 0: game.g.clear();
+                    game.ad(4);
                     state = State.Running;
-                    if (game.tiltControls) game.platformHandeler.wakeLock(1); break;
+                    if (game.tiltControls) game.wakeLock(1); break;
                 case -1:
             }
 			break;
@@ -373,7 +385,7 @@ public class GameScreen implements Screen, InputProcessor {
                 case 1: game.increaseGamesPlayed();
                     leavingToMainMenu = true; break;
                 case 0: state = State.Running;
-                    if (game.tiltControls) game.platformHandeler.wakeLock(1); break;
+                    if (game.tiltControls) game.wakeLock(1); break;
                 case -1:
             }
 			break;

@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class MyGdxGame extends Game {
 
-    PlatformHandler platformHandeler;
+    private PlatformHandler platformHandeler;
     SpriteBatch batch;
     ShapeRenderer shapeRenderer;
 	BitmapFont font;
@@ -18,19 +18,21 @@ public class MyGdxGame extends Game {
 	public boolean debug = false;
     public int highScore = 0;
 	public boolean tiltControls = false;
-    public boolean[] badges = new boolean[10];
     public int gamesPlayed = 0;
     boolean sound = true;
     public float slider = 1;
     public boolean seenTutorial = false;
 	String fileNameHighScore = "bestscore";
 	String fileNameTiltControls = "tiltcontrols";
-    String fileNameBadges = "badge";
     String fileNameGamesPlayed = "gamesplayed";
     String fileNameSound = "sound";
     String fileNameSlider = "slider";
     String fileNameTutorial = "tutorial";
 	float accelX = 0, accelY = 0, accelZ = 0;
+    final boolean showAds = true;
+    public boolean loggedInToGoogle= false;
+    private String fileNameUnsavedBest= "unbest";
+    private String fileNameUnsavedAchievements = "unach";
 
     public MyGdxGame(PlatformInterface platformInterface) {
         platformHandeler = new PlatformHandler(platformInterface);
@@ -53,13 +55,10 @@ public class MyGdxGame extends Game {
         highScore = decrypt(prefs.getString(fileNameHighScore, "0"));
         //highScore = prefs.getInteger("highscore0", 0);
 		tiltControls = prefs.getBoolean(fileNameTiltControls, false);
-        for (int k = 0; k < 10; k++)
-            badges[k] = prefs.getBoolean(fileNameBadges + k, false);
         gamesPlayed = prefs.getInteger(fileNameGamesPlayed, 0);
         sound = prefs.getBoolean(fileNameSound, true);
-        slider = prefs.getFloat(fileNameSlider, 1);
+        slider = prefs.getFloat(fileNameSlider, 0.8f);
         seenTutorial = prefs.getBoolean(fileNameTutorial, false);
-		//seenTutorial = false;
 
 		g = new CloudGame(this);
 		this.setScreen(new SplashScreen(this));
@@ -79,12 +78,6 @@ public class MyGdxGame extends Game {
 		prefs.putBoolean(fileNameTiltControls, toTiltControls);
 		prefs.flush();
 	}
-
-    public void setBadge(int badgeIndex) {
-        badges[badgeIndex] = true;
-        prefs.putBoolean(fileNameBadges + badgeIndex, true);
-        prefs.flush();
-    }
 
     public void increaseGamesPlayed() {
         gamesPlayed++;
@@ -141,16 +134,61 @@ public class MyGdxGame extends Game {
         else return 0;
     }
 
+    public void wakeLock(int k) {
+       platformHandeler.wakeLock(k);
+    }
+
     public int ad(int k) {
+        if (k==6) k=5;
         return platformHandeler.ad(k);
     }
 
+    public int login1out2(int k) {
+        return platformHandeler.login1out2(k);
+    }
+
     public int leaderboard(int k) {
-        return 0;
+        return platformHandeler.leaderboard(k);
     }
 
     public int achievement(int k) {
+        //call for an achievement here tp platformHandler when attained
+
         return 0;
+    }
+
+    public void failedLeaderboard(int score) {
+        int unsaved = prefs.getInteger(fileNameUnsavedBest, -1);
+        if (score > unsaved) {
+            prefs.putInteger(fileNameUnsavedBest, score);
+            prefs.flush();
+        }
+    }
+
+    public void failedAchievement(int achievement) {
+        String unsaved = prefs.getString(fileNameUnsavedAchievements, "");
+        char ach = (char)(achievement + 'A');
+        prefs.putString(fileNameUnsavedAchievements, unsaved + "" + ach);
+        prefs.flush();
+    }
+
+    public void tryToSave() {
+        if (prefs == null) prefs = Gdx.app.getPreferences(".cloudgame");
+        int unsaved = prefs.getInteger(fileNameUnsavedBest, -1);
+        if (unsaved > 0) {
+            prefs.putInteger(fileNameUnsavedBest, -1);
+            prefs.flush();
+            platformHandeler.leaderboard(unsaved);
+        }
+        String unach = prefs.getString(fileNameUnsavedAchievements, "");
+        if (! unach.equals("")) {
+            for (int q = 0; q < unach.length(); q++) {
+                int c = unach.charAt(q) - 'A';
+                platformHandeler.achievement(c);
+            }
+            prefs.putString(fileNameUnsavedAchievements, "");
+            prefs.flush();
+        }
     }
 
  

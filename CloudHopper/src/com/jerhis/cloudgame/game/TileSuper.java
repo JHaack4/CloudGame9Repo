@@ -1,7 +1,5 @@
 package com.jerhis.cloudgame.game;
 
-import com.jerhis.cloudgame.game.Tile.CollisionType;
-
 public class TileSuper extends Tile {
 
 	public TileSuper(int x, int y) {

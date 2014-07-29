@@ -1,7 +1,5 @@
 package com.jerhis.cloudgame.game;
 
-import com.jerhis.cloudgame.GameScreen;
-
 public class TileBasic extends Tile {
 
 	public TileBasic(int x, int y) {

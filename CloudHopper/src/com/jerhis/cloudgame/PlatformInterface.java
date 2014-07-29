@@ -7,9 +7,13 @@ public interface PlatformInterface {
     //1: keep screen on
     void wakeLockMessenger(int k);
 
-    //for the ads
-    //-1 no response
-    int adMessenger(int k);
+    int adMessenger(int k, int last);
+
+    int googleLogin(int in1out2);
+
+    int leaderboard(int score);
+
+    int achievement(int k);
 
 
 }
