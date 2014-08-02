@@ -4,93 +4,93 @@ filter: Linear,Linear
 repeat: none
 badge0
   rotate: false
-  xy: 140, 2
+  xy: 182, 2
   size: 40, 37
   orig: 40, 37
   offset: 0, 0
   index: -1
 yellow0
   rotate: false
-  xy: 2, 2
+  xy: 74, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 badge4
   rotate: false
-  xy: 308, 2
+  xy: 476, 2
   size: 40, 37
   orig: 40, 37
   offset: 0, 0
   index: -1
 yellow4
   rotate: false
-  xy: 86, 2
+  xy: 26, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 badge8
   rotate: false
-  xy: 392, 2
+  xy: 350, 2
   size: 40, 37
   orig: 40, 37
   offset: 0, 0
   index: -1
 pushedtutorial
   rotate: false
-  xy: 716, 2
+  xy: 820, 2
   size: 175, 125
   orig: 175, 125
   offset: 0, 0
   index: -1
 yellow8
   rotate: false
-  xy: 50, 2
+  xy: 86, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 musicoff
   rotate: false
-  xy: 560, 2
+  xy: 612, 2
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 yellow3
   rotate: false
-  xy: 38, 2
+  xy: 62, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 badge3
   rotate: false
-  xy: 350, 2
+  xy: 266, 2
   size: 40, 37
   orig: 40, 37
   offset: 0, 0
   index: -1
 badge7
   rotate: false
-  xy: 266, 2
+  xy: 392, 2
   size: 40, 37
   orig: 40, 37
   offset: 0, 0
   index: -1
 controltilt
   rotate: false
-  xy: 2, 129
+  xy: 179, 129
   size: 175, 125
   orig: 175, 125
   offset: 0, 0
   index: -1
-menubg
+settings
   rotate: false
-  xy: 2, 408
-  size: 800, 480
-  orig: 800, 480
+  xy: 356, 129
+  size: 175, 125
+  orig: 175, 125
   offset: 0, 0
   index: -1
 blackoverlay
@@ -102,49 +102,49 @@ blackoverlay
   index: -1
 sliderbar
   rotate: false
-  xy: 664, 2
+  xy: 768, 2
   size: 50, 103
   orig: 50, 103
   offset: 0, 0
   index: -1
 yellow2
   rotate: false
-  xy: 26, 2
+  xy: 38, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 controltouch
   rotate: false
-  xy: 356, 129
+  xy: 2, 129
   size: 175, 125
   orig: 175, 125
   offset: 0, 0
   index: -1
 badge2
   rotate: false
-  xy: 434, 2
+  xy: 98, 2
   size: 40, 37
   orig: 40, 37
   offset: 0, 0
   index: -1
 yellow6
   rotate: false
-  xy: 62, 2
+  xy: 14, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 badge6
   rotate: false
-  xy: 182, 2
+  xy: 308, 2
   size: 40, 37
   orig: 40, 37
   offset: 0, 0
   index: -1
 tutorial
   rotate: false
-  xy: 179, 129
+  xy: 533, 129
   size: 175, 125
   orig: 175, 125
   offset: 0, 0
@@ -156,16 +156,30 @@ loading
   orig: 500, 100
   offset: 0, 0
   index: -1
+pushedsettings
+  rotate: false
+  xy: 710, 129
+  size: 175, 125
+  orig: 175, 125
+  offset: 0, 0
+  index: -1
 badge1
   rotate: false
-  xy: 476, 2
+  xy: 140, 2
   size: 40, 37
   orig: 40, 37
   offset: 0, 0
   index: -1
+pushedback
+  rotate: false
+  xy: 716, 2
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
 yellow1
   rotate: false
-  xy: 14, 2
+  xy: 50, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
@@ -179,16 +193,23 @@ badge5
   index: -1
 yellow5
   rotate: false
-  xy: 74, 2
+  xy: 2, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 badge9
   rotate: false
-  xy: 98, 2
+  xy: 434, 2
   size: 40, 37
   orig: 40, 37
+  offset: 0, 0
+  index: -1
+plainmenubg
+  rotate: false
+  xy: 2, 408
+  size: 800, 480
+  orig: 800, 480
   offset: 0, 0
   index: -1
 slider
@@ -198,9 +219,16 @@ slider
   orig: 500, 150
   offset: 0, 0
   index: -1
+back
+  rotate: false
+  xy: 664, 2
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
 musicon
   rotate: false
-  xy: 612, 2
+  xy: 560, 2
   size: 50, 50
   orig: 50, 50
   offset: 0, 0

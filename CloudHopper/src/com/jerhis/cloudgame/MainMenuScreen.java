@@ -17,7 +17,9 @@ public class MainMenuScreen implements Screen, InputProcessor {
 	OrthographicCamera camera;
 
 	TextureAtlas textures;
-	AtlasRegion bg, controlTilt, controlTouch, sliderBG, sliderBar, blackOverlay, loading, tutImage, tutImagePushed, musicIm[] = new AtlasRegion[2], gpsButton[] = new AtlasRegion[4];
+	AtlasRegion bg, controlTilt, controlTouch, sliderBG, sliderBar, blackOverlay, loading, tutImage,
+            tutImagePushed, musicIm[] = new AtlasRegion[2], gpsButton[] = new AtlasRegion[4],
+            settingIm, settingPushed, gpsIm, gpsPushed, playText, backIm, signPushed, signIm;
 
     float slider;
     boolean sliderTouch = false, soundOn;
@@ -41,7 +43,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
         shouldReturnToMenu = false;
 
 		textures = new TextureAtlas("menuimages.txt");
-		bg = textures.findRegion("menubg");
+		bg = textures.findRegion("plainmenubg");
 		controlTilt = textures.findRegion("controltilt");
 		controlTouch = textures.findRegion("controltouch");
         sliderBar = textures.findRegion("sliderbar");
@@ -52,11 +54,18 @@ public class MainMenuScreen implements Screen, InputProcessor {
         tutImagePushed = textures.findRegion("pushedtutorial");
         musicIm[0] = textures.findRegion("musicon");
         musicIm[1] = textures.findRegion("musicoff");
+        settingIm = textures.findRegion("settings");
+        settingPushed = textures.findRegion("pushedsettings");
+        gpsIm = textures.findRegion("blackoverlay");
+        gpsPushed = textures.findRegion("blackoverlay");
+        signIm = textures.findRegion("blackoverlay");
+        signPushed = textures.findRegion("blackoverlay");
+        backIm = textures.findRegion("back");
 
         //                             sign in     si pushed      gps         gpspushed
         gpsButton = new AtlasRegion[] {tutImage, tutImagePushed, controlTilt, controlTouch};
         mainButtons = new ButtonSet();
-        mainButtons.addButton(tutImage, tutImagePushed, 725, 415);
+        mainButtons.addButton(settingIm, settingPushed, 725, 415);
         mainButtons.addButton(gpsButton[0],gpsButton[1], 575, 415); //default is SIGN IN, other is GPS
 
         settingsButtons = new ButtonSet();
@@ -101,17 +110,19 @@ public class MainMenuScreen implements Screen, InputProcessor {
 		//game.font.draw(game.batch, "Welcome to Drop!!! ", 100, 150);
         game.batch.draw(bg, 0, 0);
         if (stateGPS) {
-            game.font.draw(game.batch, "Back Arrow, 50x50", 20, 460);
-            //game.batch.draw(backArrow, 20,410);
+            //game.font.draw(game.batch, "Back Arrow, 50x50", 20, 460);
+            game.batch.draw(backIm, 20,410);
             gpsButtons.draw(game.batch);
             game.font.draw(game.batch, "LEaders 300x100", 0, 200);
             game.font.draw(game.batch, "300x100 Achievements", 0, 300);
             game.font.draw(game.batch, "150x75 Sign Out", 0, 100);
         }
         else if (stateSettings) {
+            game.font.setScale(2);
             game.font.draw(game.batch, "Settings", 300, 430);
-            game.font.draw(game.batch, "Back Arrow, 50x50", 20, 460);
-            //game.batch.draw(backArrow, 20,410);
+            game.font.setScale(1);
+            //game.font.draw(game.batch, "Back Arrow, 50x50", 20, 460);
+            game.batch.draw(backIm, 20,410);
             game.font.draw(game.batch, "Music:", 100, 350);
             game.batch.draw(musicIm[game.sound ? 0 : 1],250,300);
             //game.font.draw(game.batch, "tutorial", 100, 150);
