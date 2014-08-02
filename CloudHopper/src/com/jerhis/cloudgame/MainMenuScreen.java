@@ -56,8 +56,8 @@ public class MainMenuScreen implements Screen, InputProcessor {
         musicIm[1] = textures.findRegion("musicoff");
         settingIm = textures.findRegion("settings");
         settingPushed = textures.findRegion("pushedsettings");
-        gpsIm = textures.findRegion("signin");
-        gpsPushed = textures.findRegion("pushedsignin");
+        gpsIm = textures.findRegion("leaderboards");
+        gpsPushed = textures.findRegion("pushedleaderboards");
         signIm = textures.findRegion("signin");
         signPushed = textures.findRegion("pushedsignin");
         backIm = textures.findRegion("back");
@@ -114,6 +114,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
             //game.font.draw(game.batch, "Back Arrow, 50x50", 20, 460);
             game.batch.draw(backIm, 20,410);
             gpsButtons.draw(game.batch);
+            game.font.draw(game.batch, "You are signed in with Google.", 100, 420);
             game.font.draw(game.batch, "LEaders 300x100", 0, 200);
             game.font.draw(game.batch, "300x100 Achievements", 0, 300);
             game.font.draw(game.batch, "150x75 Sign Out", 0, 100);
@@ -129,16 +130,16 @@ public class MainMenuScreen implements Screen, InputProcessor {
             //game.font.draw(game.batch, "tutorial", 100, 150);
             settingsButtons.draw(game.batch);
             game.font.draw(game.batch, "Controls:", 100, 250);
-            if (game.tiltControls) game.batch.draw(controlTilt, 300, 150);
-            else game.batch.draw(controlTouch, 300, 150);
+            if (game.tiltControls) game.batch.draw(controlTilt, 300, 175);
+            else game.batch.draw(controlTouch, 300, 175);
             //game.font.draw(game.batch, "sensitivity", 100, 150);
-            game.batch.draw(sliderBG, 400 - sliderBG.getRegionWidth()/2, 0);
-            game.batch.draw(sliderBar, 400 - sliderBG.getRegionWidth()/2 + 500*(slider - 0.5f) - 25, 0);
+            game.batch.draw(sliderBG, 400 - sliderBG.getRegionWidth()/2, 50);
+            game.batch.draw(sliderBar, 400 - sliderBG.getRegionWidth()/2 + 500*(slider - 0.5f) - 25 +8, 60);
         }
         else {
-            game.font.draw(game.batch, "tap to play - separate image/bg", 100, 120);
-            game.font.draw(game.batch, "google & settings button - 100x100", 100, 90);
-            game.font.draw(game.batch, "& pushed version", 100, 60);
+            //game.font.draw(game.batch, "tap to play - separate image/bg", 100, 120);
+            //game.font.draw(game.batch, "google & settings button - 100x100", 100, 90);
+            //game.font.draw(game.batch, "& pushed version", 100, 60);
             //game.font.draw(game.batch, "high score/ games playaed", 100, 150);
             game.font.draw(game.batch, "Games Played: " + game.gamesPlayed, 10, 490);
             game.font.draw(game.batch, "Best: " + game.highScore, 10, 460);
@@ -146,17 +147,10 @@ public class MainMenuScreen implements Screen, InputProcessor {
             //game.font.draw(game.batch, "settings", 100, 150);
             mainButtons.draw(game.batch);
             game.batch.draw(playText, 400-691/2+2, 180);
-            game.font.draw(game.batch, "remove ads?", 100, 150);
+            //game.font.draw(game.batch, "remove ads?", 100, 150);
         }
 
-        if (game.loggedInToGoogle) {
-            mainButtons.buttons.get(1).openButton = gpsButton[2];
-            mainButtons.buttons.get(1).pushedButton = gpsButton[3];
-        }
-        else {
-            mainButtons.buttons.get(1).openButton = gpsButton[0];
-            mainButtons.buttons.get(1).pushedButton = gpsButton[1];
-        }
+        googleButtons();
 
 		if (tryGPS) {
             stateGPS = true;
@@ -183,6 +177,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
         if (readyToLeave) leaving = true;
 
 
+        if (false) {
         game.shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         game.shapeRenderer.setColor(0,1,0,1);
         int xw = 50, yw = 50;
@@ -190,6 +185,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
             for (int yy = 0; yy < 480; yy+= yw)
                 game.shapeRenderer.rect(xx,yy,xw,yw);
         game.shapeRenderer.end();
+        }
 		
 	}
  
@@ -255,7 +251,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
             settingsButtons.touchDown(x,y);
             if (x < 90 && y > 390) stateSettings = false;
             if (x > 230 && x < 320 && y > 280 && y < 370) sound();
-            if (x > 300 && x < 470 && y > 150 && y < 280) game.setControls(!game.tiltControls);
+            if (x > 300 && x < 470 && y > 160 && y < 280) game.setControls(!game.tiltControls);
             if (y < 125 && (x >= 100 && x <= 700) ) {
                 slider = x;
                 int min = 400 - sliderBG.getRegionWidth()/2;
@@ -293,6 +289,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
                 case 0: game.achievement(-1); break;
                 case 1: game.leaderboard(-1); break;
                 case 2: game.login1out2(2);
+                    googleButtons();
                     stateGPS = false; break;
                 case -1: break;
             }
@@ -365,6 +362,17 @@ public class MainMenuScreen implements Screen, InputProcessor {
         }
         else {
             gameMusic.stop();
+        }
+    }
+
+    private void googleButtons() {
+        if (game.loggedInToGoogle) {
+            mainButtons.buttons.get(1).openButton = gpsButton[2];
+            mainButtons.buttons.get(1).pushedButton = gpsButton[3];
+        }
+        else {
+            mainButtons.buttons.get(1).openButton = gpsButton[0];
+            mainButtons.buttons.get(1).pushedButton = gpsButton[1];
         }
     }
 

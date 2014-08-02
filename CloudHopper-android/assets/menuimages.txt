@@ -4,182 +4,196 @@ filter: Linear,Linear
 repeat: none
 yellow0
   rotate: false
-  xy: 660, 707
+  xy: 26, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 yellow4
   rotate: false
-  xy: 660, 659
+  xy: 2, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 pushedtutorial
   rotate: false
-  xy: 2, 775
-  size: 175, 125
-  orig: 175, 125
-  offset: 0, 0
+  xy: 744, 2
+  size: 127, 85
+  orig: 127, 85
+  offset: 24, -22
   index: -1
 yellow8
   rotate: false
-  xy: 660, 623
+  xy: 74, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 musicoff
   rotate: false
-  xy: 556, 675
+  xy: 320, 2
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 yellow3
   rotate: false
-  xy: 660, 671
+  xy: 50, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 pushedsignin
   rotate: false
-  xy: 179, 775
-  size: 175, 125
-  orig: 175, 125
-  offset: 0, 0
+  xy: 617, 2
+  size: 125, 83
+  orig: 125, 83
+  offset: 26, -23
+  index: -1
+leaderboards
+  rotate: false
+  xy: 328, 89
+  size: 161, 105
+  orig: 161, 105
+  offset: 7, -12
   index: -1
 menubg2
   rotate: false
-  xy: 2, 484
-  size: 691, 137
-  orig: 691, 137
-  offset: 0, 0
+  xy: 2, 280
+  size: 675, 127
+  orig: 675, 127
+  offset: 5, -4
   index: -1
 controltilt
   rotate: false
-  xy: 804, 129
-  size: 175, 125
-  orig: 175, 125
-  offset: 0, 0
+  xy: 165, 89
+  size: 161, 105
+  orig: 161, 105
+  offset: 7, -12
   index: -1
 settings
   rotate: false
-  xy: 356, 775
-  size: 125, 125
-  orig: 125, 125
-  offset: 0, 0
-  index: -1
-sliderbar
-  rotate: false
-  xy: 504, 623
-  size: 50, 103
-  orig: 50, 103
-  offset: 0, 0
+  xy: 426, 2
+  size: 62, 62
+  orig: 62, 62
+  offset: 2, -2
   index: -1
 blackoverlay
   rotate: false
-  xy: 804, 383
+  xy: 174, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
+sliderbar
+  rotate: false
+  xy: 138, 2
+  size: 34, 45
+  orig: 34, 45
+  offset: 8, -9
+  index: -1
 yellow2
   rotate: false
-  xy: 660, 683
+  xy: 14, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 controltouch
   rotate: false
-  xy: 804, 2
-  size: 175, 125
-  orig: 175, 125
-  offset: 0, 0
+  xy: 2, 89
+  size: 161, 105
+  orig: 161, 105
+  offset: 7, -12
   index: -1
 yellow6
   rotate: false
-  xy: 660, 635
+  xy: 62, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 tutorial
   rotate: false
-  xy: 695, 484
-  size: 175, 125
-  orig: 175, 125
-  offset: 0, 0
+  xy: 654, 89
+  size: 161, 105
+  orig: 161, 105
+  offset: 7, -12
   index: -1
 loading
   rotate: false
-  xy: 504, 738
-  size: 500, 100
-  orig: 500, 100
-  offset: 0, 0
+  xy: 2, 196
+  size: 348, 72
+  orig: 348, 72
+  offset: 75, -15
   index: -1
 pushedsettings
   rotate: false
-  xy: 804, 256
-  size: 125, 125
-  orig: 125, 125
-  offset: 0, 0
+  xy: 372, 2
+  size: 52, 54
+  orig: 52, 54
+  offset: 6, -7
   index: -1
 pushedback
   rotate: false
-  xy: 556, 623
-  size: 50, 50
-  orig: 50, 50
-  offset: 0, 0
+  xy: 98, 2
+  size: 38, 40
+  orig: 38, 40
+  offset: 6, -6
   index: -1
 yellow1
   rotate: false
-  xy: 660, 695
+  xy: 38, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
+  index: -1
+pushedleaderboards
+  rotate: false
+  xy: 490, 2
+  size: 125, 83
+  orig: 125, 83
+  offset: 26, -23
   index: -1
 yellow5
   rotate: false
-  xy: 660, 647
+  xy: 86, 2
   size: 10, 10
   orig: 10, 10
-  offset: 0, 0
-  index: -1
-slider
-  rotate: false
-  xy: 2, 623
-  size: 500, 150
-  orig: 500, 150
   offset: 0, 0
   index: -1
 plainmenubg
   rotate: false
-  xy: 2, 2
+  xy: 2, 409
   size: 800, 480
   orig: 800, 480
   offset: 0, 0
   index: -1
+slider
+  rotate: false
+  xy: 352, 196
+  size: 500, 82
+  orig: 500, 82
+  offset: 0, -30
+  index: -1
 back
   rotate: false
-  xy: 608, 675
+  xy: 216, 2
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 signin
   rotate: false
-  xy: 695, 611
-  size: 175, 125
-  orig: 175, 125
-  offset: 0, 0
+  xy: 491, 89
+  size: 161, 105
+  orig: 161, 105
+  offset: 7, -12
   index: -1
 musicon
   rotate: false
-  xy: 608, 623
+  xy: 268, 2
   size: 50, 50
   orig: 50, 50
   offset: 0, 0

@@ -144,7 +144,10 @@ public class MyGdxGame extends Game {
     }
 
     public int login1out2(int k) {
-        return platformHandeler.login1out2(k);
+        int r = platformHandeler.login1out2(k);
+        if (r==-13) loggedInToGoogle = !loggedInToGoogle;
+
+        return r;
     }
 
     public int leaderboard(int k) {

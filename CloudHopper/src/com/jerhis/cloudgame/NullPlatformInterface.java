@@ -15,7 +15,7 @@ public class NullPlatformInterface implements PlatformInterface {
 
     @Override
     public int googleLogin(int k) {
-        return -1;
+        return -13;
     }
 
     @Override
