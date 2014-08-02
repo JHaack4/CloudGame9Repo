@@ -6,6 +6,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -17,10 +18,11 @@ public class MainMenuScreen implements Screen, InputProcessor {
 	OrthographicCamera camera;
 
 	TextureAtlas textures;
-	AtlasRegion bg, controlTilt, controlTouch, sliderBG, sliderBar, blackOverlay, loading, tutImage,
+    Texture bg;
+	AtlasRegion controlTilt, controlTouch, sliderBG, sliderBar, blackOverlay, loading, tutImage,
             tutImagePushed, musicIm[] = new AtlasRegion[2], gpsButton[] = new AtlasRegion[4],
             settingIm, settingPushed, gpsIm, gpsPushed, playText, backIm, signPushed, signIm,
-            soutIm, soutP, achIm, achP, ledeIm, ledeP;
+            soutIm, soutP, achIm, achP, ledeIm, ledeP, settingsText;
 
     float slider;
     boolean sliderTouch = false, soundOn;
@@ -43,8 +45,10 @@ public class MainMenuScreen implements Screen, InputProcessor {
         shouldPlayTutorial = false;
         shouldReturnToMenu = false;
 
+        bg = new Texture(Gdx.files.internal("plainmenubg.png"));
+
 		textures = new TextureAtlas("menuimages.txt");
-		bg = textures.findRegion("plainmenubg");
+		//bg = textures.findRegion("plainmenubg");
 		controlTilt = textures.findRegion("controltilt");
 		controlTouch = textures.findRegion("controltouch");
         sliderBar = textures.findRegion("sliderbar");
@@ -65,12 +69,12 @@ public class MainMenuScreen implements Screen, InputProcessor {
         playText = textures.findRegion("menubg2");
         soutIm = textures.findRegion("signout");
         soutP = textures.findRegion("pushedsignout");
-        ledeIm = textures.findRegion("signout");
-        ledeP = textures.findRegion("pushedsignout");
-        achIm = textures.findRegion("signout");
-        achP = textures.findRegion("pushedsignout");
+        ledeIm = textures.findRegion("leaderboardsbutton");
+        ledeP = textures.findRegion("pushedleaderboardsbutton");
+        achIm = textures.findRegion("achievements");
+        achP = textures.findRegion("pushedachievements");
+        settingsText = textures.findRegion("settingstext");
 
-        //                             sign in     si pushed      gps         gpspushed
         gpsButton = new AtlasRegion[] {signIm, signPushed, gpsIm, gpsPushed};
         mainButtons = new ButtonSet();
         mainButtons.addButton(settingIm, settingPushed, 725, 415);
@@ -81,8 +85,8 @@ public class MainMenuScreen implements Screen, InputProcessor {
 
         gpsButtons = new ButtonSet();
         gpsButtons.addButton(achIm, achP, 400, 300);
-        gpsButtons.addButton(ledeIm, ledeP, 400, 200);
-        gpsButtons.addButton(soutIm, soutP, 400, 100);
+        gpsButtons.addButton(ledeIm, ledeP, 400, 160);
+        gpsButtons.addButton(soutIm, soutP, 700, 100);
 
         slider = game.slider;
         soundOn = game.sound;
@@ -121,14 +125,15 @@ public class MainMenuScreen implements Screen, InputProcessor {
             //game.font.draw(game.batch, "Back Arrow, 50x50", 20, 460);
             game.batch.draw(backIm, 20,410);
             gpsButtons.draw(game.batch);
-            game.font.draw(game.batch, "You are signed in with Google.", 100, 420);
+            game.font.draw(game.batch, "You are signed in with Google.", 100, 460);
             //game.font.draw(game.batch, "LEaders 300x100", 0, 200);
             //game.font.draw(game.batch, "300x100 Achievements", 0, 300);
             //game.font.draw(game.batch, "150x75 Sign Out", 0, 100);
         }
         else if (stateSettings) {
             game.font.setScale(2);
-            game.font.draw(game.batch, "Settings", 225, 470);
+            //game.font.draw(game.batch, "Settings", 225, 470);
+            game.batch.draw(settingsText, 400-325/2, 395);
             game.font.setScale(1);
             //game.font.draw(game.batch, "Back Arrow, 50x50", 20, 460);
             game.batch.draw(backIm, 20,410);

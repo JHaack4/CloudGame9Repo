@@ -155,6 +155,11 @@ public class MyGdxGame extends Game {
     }
 
     public int achievement(int k) {
+        if (k == -1) {
+            platformHandeler.achievement(-1);
+            return 0;
+        }
+
         //call for an achievement here tp platformHandler when attained
         if (k >= 10000) platformHandeler.achievement(0);
         if (k >= 25000) platformHandeler.achievement(1);
@@ -164,6 +169,8 @@ public class MyGdxGame extends Game {
 
         platformHandeler.achievement(5);
         platformHandeler.achievement(6);
+
+
 
         return 0;
     }

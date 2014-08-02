@@ -25,17 +25,24 @@ pushedtutorial
   index: -1
 yellow8
   rotate: false
-  xy: 74, 2
+  xy: 62, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 musicoff
   rotate: false
-  xy: 320, 2
+  xy: 216, 2
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
+  index: -1
+pushedleaderboardsbutton
+  rotate: false
+  xy: 297, 194
+  size: 249, 105
+  orig: 249, 105
+  offset: 38, -11
   index: -1
 pushedsignout
   rotate: false
@@ -46,10 +53,17 @@ pushedsignout
   index: -1
 yellow3
   rotate: false
-  xy: 50, 2
+  xy: 14, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
+  index: -1
+leaderboardsbutton
+  rotate: false
+  xy: 352, 301
+  size: 321, 123
+  orig: 321, 123
+  offset: 2, -2
   index: -1
 pushedsignin
   rotate: false
@@ -67,14 +81,14 @@ leaderboards
   index: -1
 menubg2
   rotate: false
-  xy: 2, 278
+  xy: 2, 510
   size: 675, 127
   orig: 675, 127
   offset: 5, -4
   index: -1
 controltilt
   rotate: false
-  xy: 620, 87
+  xy: 457, 87
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
@@ -100,9 +114,16 @@ sliderbar
   orig: 34, 45
   offset: 8, -9
   index: -1
+pushedachievements
+  rotate: false
+  xy: 548, 194
+  size: 249, 105
+  orig: 249, 105
+  offset: 38, -11
+  index: -1
 yellow2
   rotate: false
-  xy: 14, 2
+  xy: 38, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
@@ -123,21 +144,21 @@ signout
   index: -1
 yellow6
   rotate: false
-  xy: 62, 2
+  xy: 86, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 tutorial
   rotate: false
-  xy: 783, 87
+  xy: 620, 87
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
   index: -1
 loading
   rotate: false
-  xy: 2, 194
+  xy: 2, 301
   size: 348, 72
   orig: 348, 72
   offset: 75, -15
@@ -158,7 +179,7 @@ pushedback
   index: -1
 yellow1
   rotate: false
-  xy: 38, 2
+  xy: 50, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
@@ -170,30 +191,30 @@ pushedleaderboards
   orig: 125, 83
   offset: 26, -23
   index: -1
+achievements
+  rotate: false
+  xy: 675, 301
+  size: 321, 123
+  orig: 321, 123
+  offset: 2, -2
+  index: -1
 yellow5
   rotate: false
-  xy: 86, 2
+  xy: 74, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
-plainmenubg
-  rotate: false
-  xy: 2, 407
-  size: 800, 480
-  orig: 800, 480
-  offset: 0, 0
-  index: -1
 slider
   rotate: false
-  xy: 352, 194
+  xy: 2, 426
   size: 500, 82
   orig: 500, 82
   offset: 0, -30
   index: -1
 back
   rotate: false
-  xy: 216, 2
+  xy: 320, 2
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
@@ -205,9 +226,16 @@ musicon
   orig: 50, 50
   offset: 0, 0
   index: -1
+settingstext
+  rotate: false
+  xy: 2, 194
+  size: 293, 59
+  orig: 293, 59
+  offset: 16, -10
+  index: -1
 signin
   rotate: false
-  xy: 457, 87
+  xy: 783, 87
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
