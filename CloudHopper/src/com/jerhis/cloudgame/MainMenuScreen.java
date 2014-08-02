@@ -56,14 +56,15 @@ public class MainMenuScreen implements Screen, InputProcessor {
         musicIm[1] = textures.findRegion("musicoff");
         settingIm = textures.findRegion("settings");
         settingPushed = textures.findRegion("pushedsettings");
-        gpsIm = textures.findRegion("blackoverlay");
-        gpsPushed = textures.findRegion("blackoverlay");
-        signIm = textures.findRegion("blackoverlay");
-        signPushed = textures.findRegion("blackoverlay");
+        gpsIm = textures.findRegion("signin");
+        gpsPushed = textures.findRegion("pushedsignin");
+        signIm = textures.findRegion("signin");
+        signPushed = textures.findRegion("pushedsignin");
         backIm = textures.findRegion("back");
+        playText = textures.findRegion("menubg2");
 
         //                             sign in     si pushed      gps         gpspushed
-        gpsButton = new AtlasRegion[] {tutImage, tutImagePushed, controlTilt, controlTouch};
+        gpsButton = new AtlasRegion[] {signIm, signPushed, gpsIm, gpsPushed};
         mainButtons = new ButtonSet();
         mainButtons.addButton(settingIm, settingPushed, 725, 415);
         mainButtons.addButton(gpsButton[0],gpsButton[1], 575, 415); //default is SIGN IN, other is GPS
@@ -119,7 +120,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
         }
         else if (stateSettings) {
             game.font.setScale(2);
-            game.font.draw(game.batch, "Settings", 300, 430);
+            game.font.draw(game.batch, "Settings", 225, 470);
             game.font.setScale(1);
             //game.font.draw(game.batch, "Back Arrow, 50x50", 20, 460);
             game.batch.draw(backIm, 20,410);
@@ -144,6 +145,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
             //game.font.draw(game.batch, "gps", 100, 150);
             //game.font.draw(game.batch, "settings", 100, 150);
             mainButtons.draw(game.batch);
+            game.batch.draw(playText, 400-691/2+2, 180);
             game.font.draw(game.batch, "remove ads?", 100, 150);
         }
 

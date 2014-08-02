@@ -2,233 +2,184 @@ menuimages.png
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-badge0
-  rotate: false
-  xy: 182, 2
-  size: 40, 37
-  orig: 40, 37
-  offset: 0, 0
-  index: -1
 yellow0
   rotate: false
-  xy: 74, 2
+  xy: 660, 707
   size: 10, 10
   orig: 10, 10
-  offset: 0, 0
-  index: -1
-badge4
-  rotate: false
-  xy: 476, 2
-  size: 40, 37
-  orig: 40, 37
   offset: 0, 0
   index: -1
 yellow4
   rotate: false
-  xy: 26, 2
+  xy: 660, 659
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
-badge8
-  rotate: false
-  xy: 350, 2
-  size: 40, 37
-  orig: 40, 37
-  offset: 0, 0
-  index: -1
 pushedtutorial
   rotate: false
-  xy: 820, 2
+  xy: 2, 775
   size: 175, 125
   orig: 175, 125
   offset: 0, 0
   index: -1
 yellow8
   rotate: false
-  xy: 86, 2
+  xy: 660, 623
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 musicoff
   rotate: false
-  xy: 612, 2
+  xy: 556, 675
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 yellow3
   rotate: false
-  xy: 62, 2
+  xy: 660, 671
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
-badge3
+pushedsignin
   rotate: false
-  xy: 266, 2
-  size: 40, 37
-  orig: 40, 37
+  xy: 179, 775
+  size: 175, 125
+  orig: 175, 125
   offset: 0, 0
   index: -1
-badge7
+menubg2
   rotate: false
-  xy: 392, 2
-  size: 40, 37
-  orig: 40, 37
+  xy: 2, 484
+  size: 691, 137
+  orig: 691, 137
   offset: 0, 0
   index: -1
 controltilt
   rotate: false
-  xy: 179, 129
+  xy: 804, 129
   size: 175, 125
   orig: 175, 125
   offset: 0, 0
   index: -1
 settings
   rotate: false
-  xy: 356, 129
-  size: 175, 125
-  orig: 175, 125
-  offset: 0, 0
-  index: -1
-blackoverlay
-  rotate: false
-  xy: 518, 2
-  size: 40, 40
-  orig: 40, 40
+  xy: 356, 775
+  size: 125, 125
+  orig: 125, 125
   offset: 0, 0
   index: -1
 sliderbar
   rotate: false
-  xy: 768, 2
+  xy: 504, 623
   size: 50, 103
   orig: 50, 103
   offset: 0, 0
   index: -1
+blackoverlay
+  rotate: false
+  xy: 804, 383
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
 yellow2
   rotate: false
-  xy: 38, 2
+  xy: 660, 683
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 controltouch
   rotate: false
-  xy: 2, 129
+  xy: 804, 2
   size: 175, 125
   orig: 175, 125
   offset: 0, 0
   index: -1
-badge2
-  rotate: false
-  xy: 98, 2
-  size: 40, 37
-  orig: 40, 37
-  offset: 0, 0
-  index: -1
 yellow6
   rotate: false
-  xy: 14, 2
+  xy: 660, 635
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
-badge6
-  rotate: false
-  xy: 308, 2
-  size: 40, 37
-  orig: 40, 37
-  offset: 0, 0
-  index: -1
 tutorial
   rotate: false
-  xy: 533, 129
+  xy: 695, 484
   size: 175, 125
   orig: 175, 125
   offset: 0, 0
   index: -1
 loading
   rotate: false
-  xy: 2, 256
+  xy: 504, 738
   size: 500, 100
   orig: 500, 100
   offset: 0, 0
   index: -1
 pushedsettings
   rotate: false
-  xy: 710, 129
-  size: 175, 125
-  orig: 175, 125
-  offset: 0, 0
-  index: -1
-badge1
-  rotate: false
-  xy: 140, 2
-  size: 40, 37
-  orig: 40, 37
+  xy: 804, 256
+  size: 125, 125
+  orig: 125, 125
   offset: 0, 0
   index: -1
 pushedback
   rotate: false
-  xy: 716, 2
+  xy: 556, 623
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 yellow1
   rotate: false
-  xy: 50, 2
+  xy: 660, 695
   size: 10, 10
   orig: 10, 10
-  offset: 0, 0
-  index: -1
-badge5
-  rotate: false
-  xy: 224, 2
-  size: 40, 37
-  orig: 40, 37
   offset: 0, 0
   index: -1
 yellow5
   rotate: false
-  xy: 2, 2
+  xy: 660, 647
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
-badge9
-  rotate: false
-  xy: 434, 2
-  size: 40, 37
-  orig: 40, 37
-  offset: 0, 0
-  index: -1
-plainmenubg
-  rotate: false
-  xy: 2, 408
-  size: 800, 480
-  orig: 800, 480
-  offset: 0, 0
-  index: -1
 slider
   rotate: false
-  xy: 504, 256
+  xy: 2, 623
   size: 500, 150
   orig: 500, 150
   offset: 0, 0
   index: -1
+plainmenubg
+  rotate: false
+  xy: 2, 2
+  size: 800, 480
+  orig: 800, 480
+  offset: 0, 0
+  index: -1
 back
   rotate: false
-  xy: 664, 2
+  xy: 608, 675
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
+signin
+  rotate: false
+  xy: 695, 611
+  size: 175, 125
+  orig: 175, 125
+  offset: 0, 0
+  index: -1
 musicon
   rotate: false
-  xy: 560, 2
+  xy: 608, 623
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
