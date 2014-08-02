@@ -59,6 +59,11 @@ public class MainActivity extends AndroidApplication implements PlatformInterfac
         setContentView(layout);
     }
 
+    @Override
+    public void onBackPressed() {
+        game.onBackPressed();
+    }
+
     //---------------------WAKELOCK MESSENGER ----------------------------
     public void wakeLockMessenger(int k) {
         if (k == 1) {
@@ -160,7 +165,7 @@ public class MainActivity extends AndroidApplication implements PlatformInterfac
     public void gameHelperSetup() {
         //deal with gamehelper
         gameHelper = new GameHelper(this, GameHelper.CLIENT_GAMES);
-        gameHelper.setMaxAutoSignInAttempts(0);
+        gameHelper.setMaxAutoSignInAttempts(1);
         //gameHelper.enableDebugLog(true);
         gameHelper.setup(this);
     }

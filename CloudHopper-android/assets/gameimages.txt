@@ -4,84 +4,84 @@ filter: Linear,Linear
 repeat: none
 guyred
   rotate: false
-  xy: 86, 86
+  xy: 128, 86
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
 blue22 copy
   rotate: false
-  xy: 86, 44
+  xy: 2, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 yellow4
   rotate: false
-  xy: 2, 2
+  xy: 50, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 blue13 copy
   rotate: false
-  xy: 464, 44
+  xy: 548, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 clsc5
   rotate: false
-  xy: 806, 2
+  xy: 836, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue7 copy
   rotate: false
-  xy: 758, 44
+  xy: 170, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 basic0
   rotate: false
-  xy: 342, 86
+  xy: 384, 86
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 blue20 copy
   rotate: false
-  xy: 548, 44
+  xy: 86, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue11 copy
   rotate: false
-  xy: 338, 44
+  xy: 422, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 yellow0
   rotate: false
-  xy: 62, 2
+  xy: 2, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 clsc9
   rotate: false
-  xy: 470, 2
+  xy: 584, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 musicoff
   rotate: false
-  xy: 186, 86
+  xy: 228, 86
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
@@ -102,63 +102,63 @@ buttonmainmenu
   index: -1
 clsc2
   rotate: false
-  xy: 344, 2
+  xy: 332, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blackoverlay
   rotate: false
-  xy: 86, 2
-  size: 10, 10
-  orig: 10, 10
+  xy: 254, 44
+  size: 40, 40
+  orig: 40, 40
   offset: 0, 0
   index: -1
 rain15
   rotate: false
-  xy: 134, 2
+  xy: 122, 2
   size: 15, 15
   orig: 15, 15
   offset: 0, 0
   index: -1
 blue29 copy
   rotate: false
-  xy: 926, 44
+  xy: 674, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 yellow7
   rotate: false
-  xy: 122, 2
+  xy: 110, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 blue4 copy
   rotate: false
-  xy: 674, 44
+  xy: 842, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 clsc6
   rotate: false
-  xy: 764, 2
+  xy: 794, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 bug
   rotate: false
-  xy: 136, 86
+  xy: 178, 86
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
 clsc15
   rotate: false
-  xy: 176, 2
+  xy: 206, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
@@ -172,42 +172,42 @@ blue27 copy
   index: -1
 super
   rotate: false
-  xy: 408, 86
+  xy: 450, 86
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 blue18 copy
   rotate: false
-  xy: 890, 2
+  xy: 962, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue2 copy
   rotate: false
-  xy: 2, 44
+  xy: 590, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 yellow3
   rotate: false
-  xy: 26, 2
+  xy: 14, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 blue25 copy
   rotate: false
-  xy: 44, 86
+  xy: 926, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 clsc11
   rotate: false
-  xy: 302, 2
+  xy: 416, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
@@ -221,21 +221,21 @@ buttonretry
   index: -1
 blue16 copy
   rotate: false
-  xy: 296, 44
+  xy: 212, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue8 copy
   rotate: false
-  xy: 128, 44
+  xy: 668, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 lightninghalf
   rotate: false
-  xy: 154, 2
+  xy: 142, 2
   size: 20, 40
   orig: 20, 40
   offset: 0, 0
@@ -249,91 +249,91 @@ yellow6
   index: -1
 blue23 copy
   rotate: false
-  xy: 974, 2
+  xy: 632, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 clsc3
   rotate: false
-  xy: 596, 2
+  xy: 626, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue14 copy
   rotate: false
-  xy: 506, 44
+  xy: 464, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 lightningline
   rotate: false
-  xy: 151, 2
+  xy: 139, 2
   size: 1, 40
   orig: 1, 40
   offset: 0, 0
   index: -1
 clsc14
   rotate: false
-  xy: 218, 2
+  xy: 164, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 pushedmainmenu
   rotate: false
-  xy: 474, 86
+  xy: 516, 86
   size: 275, 100
   orig: 275, 100
   offset: 0, 0
   index: -1
 blue6 copy
   rotate: false
-  xy: 716, 44
+  xy: 800, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue21 copy
   rotate: false
-  xy: 44, 44
+  xy: 128, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue12 copy
   rotate: false
-  xy: 380, 44
+  xy: 506, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 yellow2
   rotate: false
-  xy: 50, 2
+  xy: 38, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 clsc7
   rotate: false
-  xy: 680, 2
+  xy: 710, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 rain
   rotate: false
-  xy: 512, 2
+  xy: 542, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 clsc10
   rotate: false
-  xy: 848, 2
+  xy: 878, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
@@ -347,56 +347,56 @@ pushedretry
   index: -1
 blue10 copy
   rotate: false
-  xy: 254, 44
+  xy: 380, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue1 copy
   rotate: false
-  xy: 212, 44
+  xy: 296, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue30 copy
   rotate: false
-  xy: 842, 44
+  xy: 716, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 yellow9
   rotate: false
-  xy: 74, 2
+  xy: 62, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 clsc4
   rotate: false
-  xy: 722, 2
+  xy: 752, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 clsc13
   rotate: false
-  xy: 260, 2
+  xy: 248, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 musicon
   rotate: false
-  xy: 238, 86
+  xy: 280, 86
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 pauseicon
   rotate: false
-  xy: 290, 86
+  xy: 332, 86
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
@@ -417,91 +417,91 @@ ready
   index: -1
 blue19 copy
   rotate: false
-  xy: 932, 2
+  xy: 44, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue5 copy
   rotate: false
-  xy: 800, 44
+  xy: 758, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 yellow5
   rotate: false
-  xy: 14, 2
+  xy: 74, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 clsc8
   rotate: false
-  xy: 638, 2
+  xy: 500, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue26 copy
   rotate: false
-  xy: 884, 44
+  xy: 44, 86
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue17 copy
   rotate: false
-  xy: 170, 44
+  xy: 920, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue3 copy
   rotate: false
-  xy: 632, 44
+  xy: 884, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 yellow8
   rotate: false
-  xy: 110, 2
+  xy: 86, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 yellow1
   rotate: false
-  xy: 38, 2
+  xy: 26, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 clsc1
   rotate: false
-  xy: 386, 2
+  xy: 458, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 clsc12
   rotate: false
-  xy: 428, 2
+  xy: 290, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue24 copy
   rotate: false
-  xy: 590, 44
+  xy: 86, 86
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 blue15 copy
   rotate: false
-  xy: 422, 44
+  xy: 338, 44
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
@@ -515,7 +515,7 @@ buttonresume
   index: -1
 blue9 copy
   rotate: false
-  xy: 554, 2
+  xy: 374, 2
   size: 40, 40
   orig: 40, 40
   offset: 0, 0

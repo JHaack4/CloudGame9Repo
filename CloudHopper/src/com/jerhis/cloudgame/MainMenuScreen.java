@@ -388,6 +388,11 @@ public class MainMenuScreen implements Screen, InputProcessor {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+    public void onBackPressed() {
+        stateGPS = false;
+        stateSettings = false;
+    }
 	
 }
 	

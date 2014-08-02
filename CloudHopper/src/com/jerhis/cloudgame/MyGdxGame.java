@@ -203,5 +203,10 @@ public class MyGdxGame extends Game {
 		batch.dispose();
 		font.dispose();
 	}
- 
+
+    public void onBackPressed() {
+        if (getScreen() instanceof MainMenuScreen) {
+            ((MainMenuScreen)(getScreen())).onBackPressed();
+        }
+    }
 }
