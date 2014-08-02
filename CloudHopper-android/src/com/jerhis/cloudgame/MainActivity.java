@@ -23,7 +23,10 @@ public class MainActivity extends AndroidApplication implements PlatformInterfac
     final String leaderboardID = "CgkIpdXK2pEUEAIQAQ",
                 bannerID = "ca-app-pub-7112170935668014/4879599282",
                 interstitialID = "ca-app-pub-7112170935668014/9309798883",
-                achievementID = "";
+                achievementID = "CgkIpdXK2pEUEAIQ";
+    final String achievementIDEnds[] = new String[]
+        //begin0, inter1, advan2, exper3, maste4, newbi5, veter6, ...
+        {   "Ag",   "Aw",   "BQ",   "Bg",  "CA",    "BA",  "Bw"};
     MyGdxGame game;
     GameHelper gameHelper;
     AdView adView;
@@ -243,7 +246,7 @@ public class MainActivity extends AndroidApplication implements PlatformInterfac
 
     //-------------------ACHIEVEMENTS--------------------------------------
     @Override
-    public int achievement(int k) {
+    public int achievement(int k, int howMany) {
         Log.d("jerhis", "ACHIEVEMENT: " + k);
 
         //Games.Achievements.unlock(getApiClient(), "my_achievement_id");
@@ -258,37 +261,28 @@ public class MainActivity extends AndroidApplication implements PlatformInterfac
         else if (k >= 0) {
             if (gameHelper.isSignedIn()) {
                 switch (k) {
-                    case 0: break;
-                    case 1: break;
-                    case 2: break;
-                    case 3: break;
-                    case 4: break;
-                    case 5: break;
-                    case 6: break;
+                    //begin0, inter1, advan2, exper3, maste4, newbi5, veter6, ...
+                    //unlocks
+                    case 0:case 1:case 2:case 3:case 4:
+                        Games.Achievements.unlock(gameHelper.getApiClient(), achievementID + achievementIDEnds[k]);
+                        break;
+                    //increments
+                    case 5:case 6:
+                        Games.Achievements.increment(gameHelper.getApiClient(), achievementID + achievementIDEnds[k], howMany);
+                        break;
                 }
             }
             else {
                 game.failedAchievement(k);
             }
-            /*if (k >= 40000) Games.Achievements.unlock(gameHelper.getApiClient(), "CggI7qKfjjsQAhAF");
-            if (k >= 100000) Games.Achievements.unlock(gameHelper.getApiClient(), "CggI7qKfjjsQAhAG");
-            if (k >= 700000) Games.Achievements.unlock(gameHelper.getApiClient(), "CggI7qKfjjsQAhAH");
-            if (k == -1) {
-                if (gameHelper.isSignedIn()) {
-                    Games.Achievements.increment(gameHelper.getApiClient(), "CggI7qKfjjsQAhAD", 1);
-                    Games.Achievements.increment(gameHelper.getApiClient(), "CggI7qKfjjsQAhAE", 1);
-                }
-                else {
-                    game.incrementUnsaved();
-                }
-            }
-            else if (k < -3 && gameHelper.isSignedIn()) {
-                Games.Achievements.increment(gameHelper.getApiClient(), "CggI7qKfjjsQAhAD", -3-k);
-                Games.Achievements.increment(gameHelper.getApiClient(), "CggI7qKfjjsQAhAE", -3-k);
-            }*/
         }
 
         return 0;
+    }
+
+    @Override
+    public int achievement(int k) {
+        return achievement(k, 1);
     }
 
 }

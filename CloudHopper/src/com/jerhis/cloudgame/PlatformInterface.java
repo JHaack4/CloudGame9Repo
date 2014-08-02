@@ -15,5 +15,7 @@ public interface PlatformInterface {
 
     int achievement(int k);
 
+    int achievement(int k, int howMany);
+
 
 }

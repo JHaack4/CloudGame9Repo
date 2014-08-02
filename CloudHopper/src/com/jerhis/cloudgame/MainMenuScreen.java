@@ -19,7 +19,8 @@ public class MainMenuScreen implements Screen, InputProcessor {
 	TextureAtlas textures;
 	AtlasRegion bg, controlTilt, controlTouch, sliderBG, sliderBar, blackOverlay, loading, tutImage,
             tutImagePushed, musicIm[] = new AtlasRegion[2], gpsButton[] = new AtlasRegion[4],
-            settingIm, settingPushed, gpsIm, gpsPushed, playText, backIm, signPushed, signIm;
+            settingIm, settingPushed, gpsIm, gpsPushed, playText, backIm, signPushed, signIm,
+            soutIm, soutP, achIm, achP, ledeIm, ledeP;
 
     float slider;
     boolean sliderTouch = false, soundOn;
@@ -62,6 +63,12 @@ public class MainMenuScreen implements Screen, InputProcessor {
         signPushed = textures.findRegion("pushedsignin");
         backIm = textures.findRegion("back");
         playText = textures.findRegion("menubg2");
+        soutIm = textures.findRegion("signout");
+        soutP = textures.findRegion("pushedsignout");
+        ledeIm = textures.findRegion("signout");
+        ledeP = textures.findRegion("pushedsignout");
+        achIm = textures.findRegion("signout");
+        achP = textures.findRegion("pushedsignout");
 
         //                             sign in     si pushed      gps         gpspushed
         gpsButton = new AtlasRegion[] {signIm, signPushed, gpsIm, gpsPushed};
@@ -73,9 +80,9 @@ public class MainMenuScreen implements Screen, InputProcessor {
         settingsButtons.addButton(tutImage, tutImagePushed, 700, 480-125/2);
 
         gpsButtons = new ButtonSet();
-        gpsButtons.addButton(tutImage, tutImagePushed, 400, 300);
-        gpsButtons.addButton(tutImage, tutImagePushed, 400, 200);
-        gpsButtons.addButton(tutImage, tutImagePushed, 400, 100);
+        gpsButtons.addButton(achIm, achP, 400, 300);
+        gpsButtons.addButton(ledeIm, ledeP, 400, 200);
+        gpsButtons.addButton(soutIm, soutP, 400, 100);
 
         slider = game.slider;
         soundOn = game.sound;
@@ -115,9 +122,9 @@ public class MainMenuScreen implements Screen, InputProcessor {
             game.batch.draw(backIm, 20,410);
             gpsButtons.draw(game.batch);
             game.font.draw(game.batch, "You are signed in with Google.", 100, 420);
-            game.font.draw(game.batch, "LEaders 300x100", 0, 200);
-            game.font.draw(game.batch, "300x100 Achievements", 0, 300);
-            game.font.draw(game.batch, "150x75 Sign Out", 0, 100);
+            //game.font.draw(game.batch, "LEaders 300x100", 0, 200);
+            //game.font.draw(game.batch, "300x100 Achievements", 0, 300);
+            //game.font.draw(game.batch, "150x75 Sign Out", 0, 100);
         }
         else if (stateSettings) {
             game.font.setScale(2);
@@ -177,7 +184,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
         if (readyToLeave) leaving = true;
 
 
-        if (false) {
+        if (!true) {
         game.shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         game.shapeRenderer.setColor(0,1,0,1);
         int xw = 50, yw = 50;

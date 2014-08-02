@@ -18,7 +18,7 @@ yellow4
   index: -1
 pushedtutorial
   rotate: false
-  xy: 744, 2
+  xy: 2, 87
   size: 127, 85
   orig: 127, 85
   offset: 24, -22
@@ -37,6 +37,13 @@ musicoff
   orig: 50, 50
   offset: 0, 0
   index: -1
+pushedsignout
+  rotate: false
+  xy: 490, 2
+  size: 91, 61
+  orig: 91, 61
+  offset: 18, -16
+  index: -1
 yellow3
   rotate: false
   xy: 50, 2
@@ -46,28 +53,28 @@ yellow3
   index: -1
 pushedsignin
   rotate: false
-  xy: 617, 2
+  xy: 829, 2
   size: 125, 83
   orig: 125, 83
   offset: 26, -23
   index: -1
 leaderboards
   rotate: false
-  xy: 328, 89
+  xy: 131, 87
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
   index: -1
 menubg2
   rotate: false
-  xy: 2, 280
+  xy: 2, 278
   size: 675, 127
   orig: 675, 127
   offset: 5, -4
   index: -1
 controltilt
   rotate: false
-  xy: 165, 89
+  xy: 620, 87
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
@@ -102,10 +109,17 @@ yellow2
   index: -1
 controltouch
   rotate: false
-  xy: 2, 89
+  xy: 294, 87
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
+  index: -1
+signout
+  rotate: false
+  xy: 583, 2
+  size: 117, 77
+  orig: 117, 77
+  offset: 4, -8
   index: -1
 yellow6
   rotate: false
@@ -116,14 +130,14 @@ yellow6
   index: -1
 tutorial
   rotate: false
-  xy: 654, 89
+  xy: 783, 87
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
   index: -1
 loading
   rotate: false
-  xy: 2, 196
+  xy: 2, 194
   size: 348, 72
   orig: 348, 72
   offset: 75, -15
@@ -151,7 +165,7 @@ yellow1
   index: -1
 pushedleaderboards
   rotate: false
-  xy: 490, 2
+  xy: 702, 2
   size: 125, 83
   orig: 125, 83
   offset: 26, -23
@@ -165,14 +179,14 @@ yellow5
   index: -1
 plainmenubg
   rotate: false
-  xy: 2, 409
+  xy: 2, 407
   size: 800, 480
   orig: 800, 480
   offset: 0, 0
   index: -1
 slider
   rotate: false
-  xy: 352, 196
+  xy: 352, 194
   size: 500, 82
   orig: 500, 82
   offset: 0, -30
@@ -184,17 +198,17 @@ back
   orig: 50, 50
   offset: 0, 0
   index: -1
-signin
-  rotate: false
-  xy: 491, 89
-  size: 161, 105
-  orig: 161, 105
-  offset: 7, -12
-  index: -1
 musicon
   rotate: false
   xy: 268, 2
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
+  index: -1
+signin
+  rotate: false
+  xy: 457, 87
+  size: 161, 105
+  orig: 161, 105
+  offset: 7, -12
   index: -1

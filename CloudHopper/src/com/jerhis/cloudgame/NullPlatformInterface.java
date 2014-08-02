@@ -24,6 +24,11 @@ public class NullPlatformInterface implements PlatformInterface {
     }
 
     @Override
+    public int achievement(int k, int howMany) {
+        return -1;
+    }
+
+    @Override
     public int achievement(int k) {
         return -1;
     }
