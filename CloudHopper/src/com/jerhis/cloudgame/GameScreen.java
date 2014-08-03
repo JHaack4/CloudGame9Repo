@@ -134,7 +134,6 @@ public class GameScreen implements Screen, InputProcessor {
 
         //long startNanoTime = System.nanoTime();
 		stateRender(delta);
-       // long startNanoTime2 = System.nanoTime();
 		stateDraw(delta, false);
 		//game.setScreen(new GenericScreen(game));
 

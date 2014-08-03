@@ -131,7 +131,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
             game.font.draw(game.batch, "You are signed in with Google.", 100, 460);
             //game.font.draw(game.batch, "LEaders 300x100", 0, 200);
             //game.font.draw(game.batch, "300x100 Achievements", 0, 300);
-            //game.font.draw(game.batch, "150x75 Sign Out", 0, 100);
+            //game.font.draw(game.batch, "150x75 Sign Out", 0, 100);//
         }
         else if (stateSettings) {
             game.font.setScale(2);

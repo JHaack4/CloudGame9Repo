@@ -37,7 +37,7 @@ public class CloudGame {
 		totalTime += delta;
 		//bgOffSet = ((totalTime * guy.OFFSETSPEED) % 840) - 40;
 		//bg1 = (int)((totalTime * 2 * 10) % 1600 - 800);
-		//bg2 = (int)((bg1 + 1600) % 1600 - 800);
+		//bg2 = (int)((bg1 + 1600) % 1600 - 800);//
 		
 		if (game.tiltControls)
 			guy.update(delta, game.accelX, game.accelY, game.accelZ, height, game.slider);
