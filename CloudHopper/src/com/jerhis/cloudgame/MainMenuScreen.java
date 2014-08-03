@@ -1,5 +1,7 @@
 package com.jerhis.cloudgame;
 
+import android.util.Log;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
@@ -111,6 +113,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
  
 	@Override
 	public void render(float delta) {
+
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
  
@@ -198,8 +201,10 @@ public class MainMenuScreen implements Screen, InputProcessor {
                 game.shapeRenderer.rect(xx,yy,xw,yw);
         game.shapeRenderer.end();
         }
-		
-	}
+
+
+
+    }
  
 	@Override
 	public void resize(int width, int height) {
@@ -229,6 +234,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
 	@Override
 	public void dispose() {
 		textures.dispose();
+        bg.dispose();
 	}
 
 	@Override

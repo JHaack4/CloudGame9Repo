@@ -29,7 +29,7 @@ public class CloudGame {
 	
 	public GameScreen.State update(float delta) {
         lastDelta = delta;
-        delta = Math.min(delta, 0.025f);
+        delta = 1/60.0f;
 
 		if (game.tiltControls) 
 			game.accelY = Gdx.input.getAccelerometerY();

@@ -1,5 +1,7 @@
 package com.jerhis.cloudgame;
 
+import android.util.Log;
+
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
@@ -129,10 +131,16 @@ public class GameScreen implements Screen, InputProcessor {
  
 		camera.update();
 		game.batch.setProjectionMatrix(camera.combined);
- 
+
+        //long startNanoTime = System.nanoTime();
 		stateRender(delta);
+       // long startNanoTime2 = System.nanoTime();
 		stateDraw(delta, false);
 		//game.setScreen(new GenericScreen(game));
+
+        //long endNanoTime = System.nanoTime();
+        //Log.d("jerhis", "delta: " + ((int)(delta*100000))/100000.0 + "\tr: " + (int)(((startNanoTime2 - startNanoTime) / 1000000000.0 / delta)*100.0) + "\td: " + (int)(((endNanoTime - startNanoTime2) / 1000000000.0 / delta)*100.0));
+        //System.out.println("delta: " + delta + " nanotime: " + (endNanoTime - startNanoTime)/1000.0);
 
         if (leavingToMainMenu) {
             game.setScreen(new MainMenuScreen(game, musicGame));
@@ -172,6 +180,8 @@ public class GameScreen implements Screen, InputProcessor {
 	public void stateDraw(float delta, boolean tutorial) {
 		game.batch.begin();
 
+       // long s1 = System.nanoTime();
+
         for (Background bg: game.g.backgrounds) {
             //game.batch.draw(bg1,0,bg.y,0,0,800,200,1,4,0);
             game.batch.draw(bg1,-112,bg.y);
@@ -183,6 +193,8 @@ public class GameScreen implements Screen, InputProcessor {
 		//public void draw (TextureRegion region, float x, float y, float originX, float originY, float width, float height,
 		//float scaleX, float scaleY, float rotation) {
 		//game.batch.draw(i, x, y, 0,0, height,width, scX,scY,rotation);
+
+        //long s2 = System.nanoTime();
 
 		for (Tile tile: game.g.tiles) {
 			switch (tile.type) {
@@ -207,6 +219,8 @@ public class GameScreen implements Screen, InputProcessor {
 			case Removable: break;
 			}
 		}
+
+        //long s3 = System.nanoTime();
 		
 		for (GameObject go: game.g.gameObjects) {
 			switch (go.objectType) {
@@ -232,6 +246,8 @@ public class GameScreen implements Screen, InputProcessor {
 
         //float scX = game.g.guy.velY > 8.5f ? 1/(game.g.guy.velY/8.5f) : 1;
 		//game.batch.draw(redChaser, game.g.guy.x - redChaser.originalWidth/2, game.g.guy.y - 15- game.g.height, 0,0,redChaser.originalWidth,redChaser.originalHeight,1,scX,0);
+
+        //long s4 = System.nanoTime();
         game.batch.draw(redChaser, game.g.guy.x - redChaser.originalWidth/2, game.g.guy.y - 15- game.g.height);
 
         if (tutorial) {
@@ -276,13 +292,21 @@ public class GameScreen implements Screen, InputProcessor {
 		default:
 			break;
 		}
+       // long s5 = System.nanoTime();
 		game.batch.end();
+
+
+
+        //Log.d("jerhis", "bgs: " + pT(s1,s2,delta) + " tiles: " + pT(s2,s3,delta) + " gos: " + pT(s3,s4,delta) + " rest: " + pT(s4,s5,delta));
 	}
 
     //private void d(Texture t, int x, int y) { game.batch.draw(t, x, y); }
     private void d(AtlasRegion at, float x, float y) { game.batch.draw(at, x, y); }
     private void d(String text, float x, float y) { game.font.draw(game.batch, text, x, y); }
-	
+
+    public static int pT(long s, long e, float d) {
+        return (int)(((e - s) / 1000000000.0 / d)*100.0);
+    }
 	
 	@Override
 	public void resize(int width, int height) {
