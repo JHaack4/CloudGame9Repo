@@ -18,7 +18,7 @@ yellow4
   index: -1
 pushedtutorial
   rotate: false
-  xy: 2, 87
+  xy: 2, 98
   size: 127, 85
   orig: 127, 85
   offset: 24, -22
@@ -39,14 +39,14 @@ musicoff
   index: -1
 pushedleaderboardsbutton
   rotate: false
-  xy: 297, 194
+  xy: 297, 205
   size: 249, 105
   orig: 249, 105
   offset: 38, -11
   index: -1
 pushedsignout
   rotate: false
-  xy: 490, 2
+  xy: 448, 2
   size: 91, 61
   orig: 91, 61
   offset: 18, -16
@@ -60,45 +60,45 @@ yellow3
   index: -1
 leaderboardsbutton
   rotate: false
-  xy: 352, 301
+  xy: 675, 312
   size: 321, 123
   orig: 321, 123
   offset: 2, -2
   index: -1
 pushedsignin
   rotate: false
-  xy: 829, 2
+  xy: 881, 2
   size: 125, 83
   orig: 125, 83
   offset: 26, -23
   index: -1
 leaderboards
   rotate: false
-  xy: 131, 87
+  xy: 131, 98
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
   index: -1
 menubg2
   rotate: false
-  xy: 2, 510
+  xy: 2, 521
   size: 675, 127
   orig: 675, 127
   offset: 5, -4
   index: -1
 controltilt
   rotate: false
-  xy: 457, 87
+  xy: 457, 98
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
   index: -1
 settings
   rotate: false
-  xy: 426, 2
-  size: 62, 62
-  orig: 62, 62
-  offset: 2, -2
+  xy: 541, 2
+  size: 92, 94
+  orig: 92, 94
+  offset: 3, -2
   index: -1
 blackoverlay
   rotate: false
@@ -116,28 +116,28 @@ sliderbar
   index: -1
 pushedachievements
   rotate: false
-  xy: 548, 194
+  xy: 548, 205
   size: 249, 105
   orig: 249, 105
   offset: 38, -11
   index: -1
 yellow2
   rotate: false
-  xy: 38, 2
+  xy: 50, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 controltouch
   rotate: false
-  xy: 294, 87
+  xy: 294, 98
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
   index: -1
 signout
   rotate: false
-  xy: 583, 2
+  xy: 635, 2
   size: 117, 77
   orig: 117, 77
   offset: 4, -8
@@ -151,14 +151,14 @@ yellow6
   index: -1
 tutorial
   rotate: false
-  xy: 620, 87
+  xy: 620, 98
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
   index: -1
 loading
   rotate: false
-  xy: 2, 301
+  xy: 2, 312
   size: 348, 72
   orig: 348, 72
   offset: 75, -15
@@ -166,9 +166,9 @@ loading
 pushedsettings
   rotate: false
   xy: 372, 2
-  size: 52, 54
-  orig: 52, 54
-  offset: 6, -7
+  size: 74, 78
+  orig: 74, 78
+  offset: 11, -10
   index: -1
 pushedback
   rotate: false
@@ -179,21 +179,21 @@ pushedback
   index: -1
 yellow1
   rotate: false
-  xy: 50, 2
+  xy: 38, 2
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
   index: -1
 pushedleaderboards
   rotate: false
-  xy: 702, 2
+  xy: 754, 2
   size: 125, 83
   orig: 125, 83
   offset: 26, -23
   index: -1
 achievements
   rotate: false
-  xy: 675, 301
+  xy: 352, 312
   size: 321, 123
   orig: 321, 123
   offset: 2, -2
@@ -207,35 +207,35 @@ yellow5
   index: -1
 slider
   rotate: false
-  xy: 2, 426
+  xy: 2, 437
   size: 500, 82
   orig: 500, 82
   offset: 0, -30
   index: -1
 back
   rotate: false
-  xy: 320, 2
+  xy: 268, 2
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 musicon
   rotate: false
-  xy: 268, 2
+  xy: 320, 2
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 settingstext
   rotate: false
-  xy: 2, 194
+  xy: 2, 205
   size: 293, 59
   orig: 293, 59
   offset: 16, -10
   index: -1
 signin
   rotate: false
-  xy: 783, 87
+  xy: 783, 98
   size: 161, 105
   orig: 161, 105
   offset: 7, -12
