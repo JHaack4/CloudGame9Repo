@@ -24,7 +24,7 @@ public class GameScreen implements Screen, InputProcessor {
 
 	TextureAtlas textures;// textures2, textures3;
 	AtlasRegion ready, pauseIcon, music[] = new AtlasRegion[2], blackOverlay, yellowOverlay, rain, rain15, lighthalf, lightline,
-		basic0, super0, redChaser, sceneryClouds[] = new AtlasRegion[16], 
+		basic0, super0, redChaser, guyright, guyleft, sceneryClouds[] = new AtlasRegion[16], lightningani,
 		blue[] = new AtlasRegion[31], buttonImages[][] = new AtlasRegion[10][2];
         //backgrounds[] = new AtlasRegion[10]; //yellow[] = new AtlasRegion[10];
     Texture bg1;
@@ -71,8 +71,11 @@ public class GameScreen implements Screen, InputProcessor {
 		basic0 = textures.findRegion("basic0");
 		super0 = textures.findRegion("super");
 		redChaser = textures.findRegion("bug");
+        guyright = textures.findRegion("rightbug");
+        guyleft = textures.findRegion("leftbug");
         lighthalf = textures.findRegion("lightninghalf");
         lightline = textures.findRegion("lightningline");
+        lightningani = textures.findRegion("lightningani3");
 		for (int k = 1; k < 16; k++)
 			sceneryClouds[k] = textures.findRegion("clsc" + k);
 		sceneryClouds[0] = pauseIcon;
@@ -247,7 +250,17 @@ public class GameScreen implements Screen, InputProcessor {
 		//game.batch.draw(redChaser, game.g.guy.x - redChaser.originalWidth/2, game.g.guy.y - 15- game.g.height, 0,0,redChaser.originalWidth,redChaser.originalHeight,1,scX,0);
 
         //long s4 = System.nanoTime();
-        game.batch.draw(redChaser, game.g.guy.x - redChaser.originalWidth/2, game.g.guy.y - 15- game.g.height);
+        if (!(game.g.left ^ game.g.right))
+            game.batch.draw(redChaser, game.g.guy.x - redChaser.originalWidth/2, game.g.guy.y - 15- game.g.height);
+        else if (game.g.left && !game.g.right)
+            game.batch.draw(guyleft, game.g.guy.x - redChaser.originalWidth/2, game.g.guy.y - 15- game.g.height);
+        else if (!game.g.left && game.g.right)
+            game.batch.draw(guyright, game.g.guy.x - redChaser.originalWidth/2, game.g.guy.y - 15- game.g.height);
+
+        if (game.g.guy.lightning > 0) {
+            float stretch = (game.g.guy.LIGHTNING_MAX - Math.abs(game.g.guy.lightning - game.g.guy.LIGHTNING_MAX))*game.g.guy.LIGHTNING_SCALE;
+            game.batch.draw(lightningani,game.g.guy.x- 192/2*stretch,game.g.guy.y - game.g.height - 192/2*stretch,0,0,192,192,stretch, stretch,0);
+        }
 
         if (tutorial) {
             d(music[game.sound ? 0 : 1],800-50,480-50);
@@ -259,7 +272,7 @@ public class GameScreen implements Screen, InputProcessor {
 		d("Best: " + game.highScore, 10, 460);
 		if (game.debug) {
             int fps = (int)(1/game.g.lastDelta);
-            if (fps > 55 && fps < 62) fps = 60;
+            if (fps > 55 && fps < 64) fps = 60;
 			d("FPS: " + fps, 10, 430);
 			//d(" Y: " + game.accelY, 10, 380);
 		}

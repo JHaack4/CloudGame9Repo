@@ -28,6 +28,7 @@ public class TileSuper extends Tile {
 				Ctype == CollisionType.UL && (leftTile == null || leftTile instanceof TileScenery) ||
 				Ctype == CollisionType.UR && (rightTile == null || rightTile instanceof TileScenery))) {
 			super.continuousJumpCollision(guy, guy.SUPER_JUMP);
+            guy.lightning = guy.LIGHTNING_MAX*1.5f;
 			type = Tile.Type.becomeScenery;
 			return true;
 		}

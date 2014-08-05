@@ -5,18 +5,20 @@ import com.badlogic.gdx.math.Vector3;
 public class Guy {
 	
 	public float x,y;
-	public float velY, velX;
+	public float velY, velX, lightning;
 	public boolean jumping= true, dead = false;
     public Vector3 lastAccel = new Vector3(0,0,0);
 	
-	public final float  MOMENTUM = 1f, GRAVITY = 9,
+	public float  MOMENTUM = 1f, GRAVITY = 9,
 			MAXMOMENTUM = 7, RESISTANCE = 0.5f,
-			TILTMOMENTUM = 380f, REGULAR_JUMP = 4.0f, SUPER_JUMP = 10.8f;
+			TILTMOMENTUM = 380f, REGULAR_JUMP = 4.0f, SUPER_JUMP = 10.8f,
+            LIGHTNING_MAX = 1.0f, LIGHTNING_SCALE = 0.9f;
 	
 	public Guy(float x, float y){
 		this.x = x; 
 		this.y = y;
         lastAccel = new Vector3(0,0,0);
+        lightning = 0;
 	}
 	
 	public Guy(){
@@ -25,6 +27,9 @@ public class Guy {
 	
 	public void update(float delta, boolean right, boolean left, float height, float sensitivity) {
 		velY -= delta * GRAVITY;
+
+        lightning -= delta;
+        if (lightning < 0) lightning = 0;
 
         sensitivity += velY > 4 ? (velY - 4)/(10.8 - 4)*1.3f : 0;
         sensitivity = sensitivity > 2 ? 2.0f : sensitivity;
@@ -50,6 +55,9 @@ public class Guy {
 	
 	public void update(float delta, float accelX, float accelY, float accelZ, float height, float sensitivity) {
 		velY -= delta * GRAVITY;
+
+        lightning -= delta;
+        if (lightning < 0) lightning = 0;
 
         sensitivity += velY > REGULAR_JUMP ? (velY - REGULAR_JUMP)/(SUPER_JUMP - REGULAR_JUMP)*1.3f : 0;
         sensitivity = sensitivity > 2 ? 2.0f : sensitivity;
