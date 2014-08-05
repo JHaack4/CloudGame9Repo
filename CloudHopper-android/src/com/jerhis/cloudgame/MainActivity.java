@@ -25,8 +25,8 @@ public class MainActivity extends AndroidApplication implements PlatformInterfac
                 interstitialID = "ca-app-pub-7112170935668014/9309798883",
                 achievementID = "CgkIpdXK2pEUEAIQ";
     final String achievementIDEnds[] = new String[]
-        //begin0, inter1, advan2, exper3, maste4, newbi5, veter6, ...
-        {   "Ag",   "Aw",   "BQ",   "Bg",  "CA",    "BA",  "Bw"};
+        //begin0, inter1, advan2, exper3, maste4, newbi5, veter6, rain7...
+        {   "Ag",   "Aw",   "BQ",   "Bg",  "CA",    "BA",  "Bw",  "Cw"};
     MyGdxGame game;
     GameHelper gameHelper;
     AdView adView;
@@ -261,9 +261,9 @@ public class MainActivity extends AndroidApplication implements PlatformInterfac
         else if (k >= 0) {
             if (gameHelper.isSignedIn()) {
                 switch (k) {
-                    //begin0, inter1, advan2, exper3, maste4, newbi5, veter6, ...
+                    //begin0, inter1, advan2, exper3, maste4, newbi5, veter6, rain7 ...
                     //unlocks
-                    case 0:case 1:case 2:case 3:case 4:
+                    case 0:case 1:case 2:case 3:case 4:case 7:
                         Games.Achievements.unlock(gameHelper.getApiClient(), achievementID + achievementIDEnds[k]);
                         break;
                     //increments

@@ -258,7 +258,9 @@ public class GameScreen implements Screen, InputProcessor {
 		d("Score: " + (int)game.g.score, 10, 490);
 		d("Best: " + game.highScore, 10, 460);
 		if (game.debug) {
-			d("FPS: " + (int)(1/game.g.lastDelta), 10, 430);
+            int fps = (int)(1/game.g.lastDelta);
+            if (fps > 55 && fps < 62) fps = 60;
+			d("FPS: " + fps, 10, 430);
 			//d(" Y: " + game.accelY, 10, 380);
 		}
 					
