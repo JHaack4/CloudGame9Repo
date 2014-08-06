@@ -32,8 +32,13 @@ public class CloudGame {
         delta = 0.017f;
         //if (gameType == -1) delta = 0.017f;
 
-		if (game.tiltControls) 
+		if (game.tiltControls) {
 			game.accelY = Gdx.input.getAccelerometerY();
+            right = false;
+            left = false;
+            if (game.accelY > 0.2) right = true;
+            if (game.accelY < -0.2) left  = true;
+        }
 		
 		totalTime += delta;
 		//bgOffSet = ((totalTime * guy.OFFSETSPEED) % 840) - 40;

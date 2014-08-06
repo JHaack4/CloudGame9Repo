@@ -94,7 +94,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
         soundOn = game.sound;
         if (music == null) {
             gameMusic = Gdx.audio.newMusic(Gdx.files.internal("music.mp3"));
-            gameMusic.setVolume(0.2f);
+            gameMusic.setVolume(0.5f);
             gameMusic.setLooping(true);
             if (soundOn) {
                 gameMusic.play();
