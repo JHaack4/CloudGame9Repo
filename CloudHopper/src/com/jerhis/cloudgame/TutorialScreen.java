@@ -46,6 +46,8 @@ public class TutorialScreen implements Screen, InputProcessor {
         game.setSlider(0.7f);
         game.setControls(false);
 
+        game.ad(2);
+
         Gdx.input.setInputProcessor(this);
 
         //textures = new TextureAtlas("gameimages.txt");
@@ -84,6 +86,7 @@ public class TutorialScreen implements Screen, InputProcessor {
                 game.setSlider(pastSlider);
                 game.setControls(pastControls);
                 dispose();
+                game.ad(5);
                 game.setScreen(new MainMenuScreen(game, music));
             }
             else {
@@ -92,6 +95,7 @@ public class TutorialScreen implements Screen, InputProcessor {
                 game.setSlider(pastSlider);
                 game.setControls(pastControls);
                 gameScreen.state = GameScreen.State.Ready;
+                game.ad(6);
                 dispose();
                 game.setScreen(gameScreen);
             }

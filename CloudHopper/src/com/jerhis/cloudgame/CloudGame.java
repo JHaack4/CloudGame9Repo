@@ -36,8 +36,8 @@ public class CloudGame {
 			game.accelY = Gdx.input.getAccelerometerY();
             right = false;
             left = false;
-            if (game.accelY > 0.2) right = true;
-            if (game.accelY < -0.2) left  = true;
+            if (game.accelY > 0.5) right = true;
+            if (game.accelY < -0.5) left  = true;
         }
 		
 		totalTime += delta;
