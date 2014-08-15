@@ -24,14 +24,16 @@ public class MainMenuScreen implements Screen, InputProcessor {
 	AtlasRegion controlTilt, controlTouch, sliderBG, sliderBar, blackOverlay, loading, tutImage,
             tutImagePushed, musicIm[] = new AtlasRegion[2], gpsButton[] = new AtlasRegion[4],
             settingIm, settingPushed, gpsIm, gpsPushed, playText, backIm, signPushed, signIm,
-            soutIm, soutP, achIm, achP, ledeIm, ledeP, settingsText;
+            soutIm, soutP, achIm, achP, ledeIm, ledeP, settingsText, yesIm, yesP, tiltP, touchP,
+            noIm, noP;
 
     float slider;
     boolean sliderTouch = false, soundOn;
-	boolean leaving, readyToLeave, shouldPlayTutorial , shouldReturnToMenu;
+	boolean leaving, readyToLeave, shouldPlayTutorial, shouldReturnToMenu,
+            controlState, playTutorialState, dontLoadTextWhenLeaving;
     Music gameMusic;
     boolean stateSettings, stateGPS, tryGPS;
-    ButtonSet mainButtons, gpsButtons, settingsButtons;
+    ButtonSet mainButtons, gpsButtons, settingsButtons, controlButtons, playTutorialButtons;
  
 	public MainMenuScreen(final MyGdxGame gam, Music music) {
 		game = gam;
@@ -46,13 +48,18 @@ public class MainMenuScreen implements Screen, InputProcessor {
         readyToLeave = false;
         shouldPlayTutorial = false;
         shouldReturnToMenu = false;
+        controlState = false;
+        playTutorialState = false;
+        dontLoadTextWhenLeaving = false;
 
         bg = new Texture(Gdx.files.internal("plainmenubg.png"));
 
 		textures = new TextureAtlas("menuimages.txt");
 		//bg = textures.findRegion("plainmenubg");
 		controlTilt = textures.findRegion("controltilt");
+        tiltP = textures.findRegion("pushedcontroltilt");
 		controlTouch = textures.findRegion("controltouch");
+        touchP = textures.findRegion("pushedcontroltouch");
         sliderBar = textures.findRegion("sliderbar");
         sliderBG = textures.findRegion("slider");
         loading = textures.findRegion("loading");
@@ -76,6 +83,10 @@ public class MainMenuScreen implements Screen, InputProcessor {
         achIm = textures.findRegion("achievements");
         achP = textures.findRegion("pushedachievements");
         settingsText = textures.findRegion("settingstext");
+        yesIm = textures.findRegion("yes");
+        yesP = textures.findRegion("pushedyes");
+        noIm = textures.findRegion("no");
+        noP = textures.findRegion("pushedno");
 
         gpsButton = new AtlasRegion[] {signIm, signPushed, gpsIm, gpsPushed};
         mainButtons = new ButtonSet();
@@ -89,6 +100,14 @@ public class MainMenuScreen implements Screen, InputProcessor {
         gpsButtons.addButton(achIm, achP, 400, 300);
         gpsButtons.addButton(ledeIm, ledeP, 400, 160);
         gpsButtons.addButton(soutIm, soutP, 700, 100);
+
+        controlButtons = new ButtonSet();
+        controlButtons.addButton(controlTouch, touchP, 275, 225);
+        controlButtons.addButton(controlTilt, tiltP, 525, 225);
+
+        playTutorialButtons = new ButtonSet();
+        playTutorialButtons.addButton(yesIm, yesP, 275,225);
+        playTutorialButtons.addButton(noIm,noP, 525,225);
 
         slider = game.slider;
         soundOn = game.sound;
@@ -151,6 +170,17 @@ public class MainMenuScreen implements Screen, InputProcessor {
             game.batch.draw(sliderBG, 400 - sliderBG.getRegionWidth()/2, 50);
             game.batch.draw(sliderBar, 400 - sliderBG.getRegionWidth()/2 + 500*(slider - 0.5f) - 25 +8, 60);
         }
+        else if (playTutorialState) {
+            //game.batch.draw(blackOverlay,-50,-50,0,0,40,40,25,17,0);
+            playTutorialButtons.draw(game.batch);
+            game.font.draw(game.batch, "Do you want to see a tutorial?", 107, 400);
+        }
+        else if (controlState){
+            //game.batch.draw(blackOverlay,-50,-50,0,0,40,40,25,17,0);
+            controlButtons.draw(game.batch);
+            game.font.draw(game.batch, "What type of control?", 185, 400);
+        }
+        else if (dontLoadTextWhenLeaving) ;
         else {
             //game.font.draw(game.batch, "tap to play - separate image/bg", 100, 120);
             //game.font.draw(game.batch, "google & settings button - 100x100", 100, 90);
@@ -192,7 +222,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
         if (readyToLeave) leaving = true;
 
 
-        if (!true) {
+        /*if (true) {
         game.shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         game.shapeRenderer.setColor(0,1,0,1);
         int xw = 50, yw = 50;
@@ -200,7 +230,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
             for (int yy = 0; yy < 480; yy+= yw)
                 game.shapeRenderer.rect(xx,yy,xw,yw);
         game.shapeRenderer.end();
-        }
+        }*/
 
 
 
@@ -280,13 +310,22 @@ public class MainMenuScreen implements Screen, InputProcessor {
                 sliderTouch = true;
             }
         }
+        else if (controlState) {
+            controlButtons.touchDown(x,y);
+        }
+        else if (playTutorialState) {
+            playTutorialButtons.touchDown(x,y);
+        }
         else {
             if (y < 350 || x < 500) {
-                readyToLeave = true;
                 if (!game.seenTutorial) {
-                    shouldPlayTutorial = true;
+                    //shouldPlayTutorial = true;
+                    controlState = true;
                     shouldReturnToMenu = false;
                     game.setSeenTutorial(true);
+                }
+                else {
+                    readyToLeave = true;
                 }
             }
             mainButtons.touchDown(x,y);
@@ -313,6 +352,10 @@ public class MainMenuScreen implements Screen, InputProcessor {
             }
         }
         else if (stateSettings) {
+            if (sliderTouch) {
+                game.setSlider(slider);
+                sliderTouch = false;
+            }
             settingsButtons.touchUp(x,y);
             switch (settingsButtons.pollClick()) {
                 case 0: shouldPlayTutorial = true;
@@ -321,9 +364,33 @@ public class MainMenuScreen implements Screen, InputProcessor {
                     readyToLeave = true; break;
                 case -1: break;
             }
-            if (sliderTouch && y <= 130) {
-                game.setSlider(slider);
-                sliderTouch = false;
+        }
+        else if (controlState) {
+            controlButtons.touchUp(x,y);
+            switch (controlButtons.pollClick()) {
+                case 0: game.setControls(false);
+                    controlState = false;
+                    playTutorialState = true;
+                    break;
+                case 1: game.setControls(true);
+                    controlState = false;
+                    playTutorialState = true;
+                    break;
+            }
+        }
+        else if (playTutorialState) {
+            playTutorialButtons.touchUp(x,y);
+            switch (playTutorialButtons.pollClick()) {
+                case 0: playTutorialState = false;
+                    readyToLeave = true;
+                    shouldPlayTutorial = true;
+                    dontLoadTextWhenLeaving = true;
+                    break;
+                case 1: playTutorialState = false;
+                    readyToLeave = true;
+                    shouldPlayTutorial = false;
+                    dontLoadTextWhenLeaving = true;
+                    break;
             }
         }
         else {
@@ -351,7 +418,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
         }
         else if (stateSettings) {
             settingsButtons.touchDragged(x,y);
-            if (sliderTouch && y < 125) {
+            if (sliderTouch) {
                 slider = x;
                 int min = 400 - sliderBG.getRegionWidth()/2;
                 slider = slider < min ? min : slider;
@@ -359,10 +426,12 @@ public class MainMenuScreen implements Screen, InputProcessor {
                 slider = (slider - min) / 500.0f + 0.5f;
                 slider = slider < 1.05f && slider > 0.95f ? 1 : slider;
             }
-            else if (sliderTouch) {
-                game.setSlider(slider);
-                sliderTouch = false;
-            }
+        }
+        else if (controlState) {
+            controlButtons.touchDragged(x,y);
+        }
+        else if (playTutorialState) {
+            playTutorialButtons.touchDragged(x,y);
         }
         else {
             mainButtons.touchDragged(x,y);

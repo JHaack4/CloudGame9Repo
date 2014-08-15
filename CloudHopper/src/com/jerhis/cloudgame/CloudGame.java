@@ -100,7 +100,7 @@ public class CloudGame {
 	}
 	
 	public void clear() {
-		game.highScore((int)score);
+		//game.highScore((int)score);
 		score = 0;
 		totalTime = 0;
 		height = 0;
@@ -111,7 +111,7 @@ public class CloudGame {
 	}
 
     public void clearTutorial() {
-        game.highScore((int)score);
+        //game.highScore((int)score);
         score = 0;
         totalTime = 0;
         height = 0;

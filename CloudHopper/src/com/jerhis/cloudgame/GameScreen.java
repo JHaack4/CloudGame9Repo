@@ -1,8 +1,5 @@
 package com.jerhis.cloudgame;
 
-import android.util.Log;
-
-import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
@@ -136,7 +133,7 @@ public class GameScreen implements Screen, InputProcessor {
 		game.batch.setProjectionMatrix(camera.combined);
 
         //long startNanoTime = System.nanoTime();
-		stateRender(delta);
+		stateRender(delta, true);
 		stateDraw(delta, false);
 		//game.setScreen(new GenericScreen(game));
 
@@ -150,7 +147,7 @@ public class GameScreen implements Screen, InputProcessor {
         }
 	}
  
-	public void stateRender(float delta) {
+	public void stateRender(float delta, boolean showAds) {
 		switch (state) {
 		case Finished:
 			break;
@@ -166,7 +163,7 @@ public class GameScreen implements Screen, InputProcessor {
             if (state != state.Running) {
                 game.wakeLock(0);
             }
-            if (state == state.Finished) {
+            if (state == state.Finished && showAds) {
                 game.highScore((int)game.g.score);
                 game.leaderboard((int)game.g.score);
                 game.achievement((int)game.g.score);
@@ -410,7 +407,7 @@ public class GameScreen implements Screen, InputProcessor {
                 case 1: leavingToMainMenu = true;
                     game.g.clear(); break;
                 case 0: game.g.clear();
-                    game.ad(4);
+                    //game.ad(4);
                     state = State.Running;
                     if (game.tiltControls) game.wakeLock(1); break;
                 case -1:

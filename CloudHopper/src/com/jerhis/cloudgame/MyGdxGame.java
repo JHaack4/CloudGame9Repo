@@ -138,8 +138,16 @@ public class MyGdxGame extends Game {
        platformHandeler.wakeLock(k);
     }
 
+    boolean adOrLoad = true;
     public int ad(int k) {
         if (k==6) k=5;
+        if (adOrLoad && k == 3) {
+            adOrLoad = false;
+        }
+        else if (!adOrLoad && k == 3) {
+            adOrLoad = true;
+            k = 4;
+        }
         return platformHandeler.ad(k);
     }
 

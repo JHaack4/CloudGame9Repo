@@ -108,7 +108,7 @@ public class TutorialScreen implements Screen, InputProcessor {
         //remember to dispose()
 
         if (tutorialState %2 == 0) {
-            gameScreen.stateRender(0.017f);
+            gameScreen.stateRender(0.017f, false);
             frame++;
         }
 
