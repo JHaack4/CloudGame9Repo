@@ -11,6 +11,7 @@ import android.content.IntentSender.SendIntentException;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import com.google.android.gms.appstate.AppStateManager;
@@ -908,11 +909,17 @@ public class GameHelper implements GoogleApiClient.ConnectionCallbacks,
 
     public void showFailureDialog() {
         if (mSignInFailureReason != null) {
-            int errorCode = mSignInFailureReason.getServiceErrorCode();
-            int actResp = mSignInFailureReason.getActivityResultCode();
+            final int errorCode = mSignInFailureReason.getServiceErrorCode();
+            final int actResp = mSignInFailureReason.getActivityResultCode();
 
             if (mShowErrorDialogs) {
-                showFailureDialog(mActivity, actResp, errorCode);
+                mActivity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        showFailureDialog(mActivity, actResp, errorCode);
+                    }
+                });
+
             } else {
                 debugLog("Not showing error dialog because mShowErrorDialogs==false. "
                         + "" + "Error was: " + mSignInFailureReason);
@@ -929,6 +936,7 @@ public class GameHelper implements GoogleApiClient.ConnectionCallbacks,
         }
         Dialog errorDialog = null;
 
+        //Looper.prepare();
         switch (actResp) {
             case GamesActivityResultCodes.RESULT_APP_MISCONFIGURED:
                 errorDialog = makeSimpleDialog(activity, GameHelperUtils.getString(
@@ -945,8 +953,11 @@ public class GameHelper implements GoogleApiClient.ConnectionCallbacks,
             default:
                 // No meaningful Activity response code, so generate default Google
                 // Play services dialog
-                errorDialog = GooglePlayServicesUtil.getErrorDialog(errorCode,
-                        activity, RC_UNUSED, null);
+                //errorDialog = GooglePlayServicesUtil.getErrorDialog(errorCode,
+                  //   activity, RC_UNUSED, null);
+                errorDialog = makeSimpleDialog(activity, GameHelperUtils.getString(
+                            activity, GameHelperUtils.R_SIGN_IN_FAILED));
+                //errorDialog = null;
                 if (errorDialog == null) {
                     // get fallback dialog
                     Log.e("GameHelper",
@@ -958,6 +969,7 @@ public class GameHelper implements GoogleApiClient.ConnectionCallbacks,
                                     + " "
                                     + GameHelperUtils.errorCodeToString(errorCode));
                 }
+                //return;
         }
 
         errorDialog.show();
